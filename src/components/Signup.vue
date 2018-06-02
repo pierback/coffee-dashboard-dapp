@@ -2,12 +2,6 @@
   <div>
     <b-form @submit="onSubmit" style="width:450px; margin:auto; margin-top:120px; padding:50px; background-color:#efebeb">
     <h1 style="text-align:center; margin-bottom:20px">Signup</h1>
-      <b-form-group id="exampleInputGroup1">
-        <b-form-input id="exampleInput1"
-                      type="text" v-model="form.username" required
-                      placeholder="Name"
-        ></b-form-input>
-      </b-form-group>
 
       <b-form-group id="exampleInputGroup1">
         <b-form-input id="exampleInput1"
@@ -30,20 +24,22 @@
       </b-form-group>
 
         
-      <b-form-group id="exampleGroup4">
-        <b-form-checkbox v-model="form.checked" id="exampleInput4">
-          Check me out
-        </b-form-checkbox>
-        <a style="float:right" href="/">login?</a>
-      </b-form-group>
-      
+      <br>
       <b-button  type="submit" variant="primary" style="width:100%">Submit</b-button>
+      <br><br>
+      <b-form-group id="exampleGroup4">
+        <!-- <b-form-checkbox v-model="form.checked" id="exampleInput4">
+          Check me out
+        </b-form-checkbox> -->
+        <a style="float:right, margin-bottom:0" href="/">login?</a>
+      </b-form-group>
+    
       <b-modal id="modalsm" style="text-align:center" ref="modal" size="sm" hide-footer>
-      <div style="color:#28a745; font-size:20px">
-      <b>Register Successfully!</b>
-      </div>
-      <b-btn class="mt-3" variant="outline-success" style="float:right" @click="onClick">Login</b-btn>
-    </b-modal>
+        <div style="color:#28a745; font-size:20px">
+        <b>Register Successfully!</b>
+        </div>
+        <b-btn class="mt-3" variant="outline-success" style="float:right" @click="onClick">Login</b-btn>
+      </b-modal>
       
       
     </b-form>
@@ -76,16 +72,16 @@ export default {
           // JSON responses are automatically parsed.
           //console.log('Register', window.location);
           this.form = response.data;
-          if (this.form.status === 200) this.$refs.modal.show();
-          //this.$refs.modal.show();
-          //this.$router.push('/login');
+          //if (this.form.status === 200) this.$refs.modal.show();
+          this.$refs.modal.show();
+          //this.$router.push('/');
         })
         .catch(e => {
           console.log(e);
         });
     },
     onClick(e) {
-      console.log('onclick');
+      //console.log('onclick');
       e.preventDefault();
       this.$router.push('/');
     }

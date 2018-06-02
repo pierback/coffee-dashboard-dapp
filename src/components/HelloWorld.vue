@@ -6,7 +6,7 @@
       <b-form-group id="exampleInputGroup1">
         <b-form-input id="exampleInput1"
                       type="text" v-model="form.username" required
-                      placeholder="Username"
+                      placeholder="Email"
         ></b-form-input>
       </b-form-group>
       <b-form-group id="exampleInputGroup2">
@@ -47,9 +47,13 @@ export default {
         .post(`http://localhost:3003/api/login`, this.form)
         .then(response => {
           // JSON responses are automatically parsed.
+          console.log('response username',response.data.email)
           this.form = response.data;
           sessionStorage.setItem('token', response.data.token);
-          console.log('sessionStorage', sessionStorage['token']);
+          sessionStorage.setItem('user', response.data.user);
+          //console.log('sessionStorage', sessionStorage['token']);
+          //this.$store.commit('setUser', response.data.username);
+          //console.log('store', this.$store.getters.getUser)
           this.$router.push('/home');
         })
         .catch(e => {

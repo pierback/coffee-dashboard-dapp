@@ -1,7 +1,8 @@
 <template>
 <div v-if="loggedIn">
   <div>
-		<h1 style="text-align:center; margin-top:200px; font-size:100px"><b>Hello there you are logged in!</b></h1>
+		<h2 style="text-align:center; margin-top:200px; font-size:100px"><b>Hello there you are logged in as: 
+      <br><br><h2>{{ user }}</h2></b></h2>
 	<form @submit="logout" >
 		<!-- <button type="submit" style="width:450px; margin:auto; margin-top:120px; padding:50px; background-color:#efebeb">logout</button> -->
      <div style="width: 50%;margin: auto;text-align: center; margin-top: 100px;">
@@ -19,20 +20,23 @@
 <script>
 export default {
   loggedIn: false,
-  methods: {
+  user:'',
+   methods: {
     logout(evt) {
       evt.preventDefault();
       console.log('logout clicked', sessionStorage);
       sessionStorage.clear();
       this.$router.push('/');
     },
-    mounted() {
-      console.log('onMount', sessionStorage);
+    getUsername() {
+      console.log(' sessionStorage', sessionStorage['user']);
+      return sessionStorage['user'];
     }
   },
   beforeCreate() {
-    console.log('Nothing gets called before me!', sessionStorage.length);
+    console.log('Nothing gets called before me!', sessionStorage);
     this.loggedIn = sessionStorage.length > 0 ? true : false;
+    this.user = sessionStorage['user'];
   }
 };
 </script>

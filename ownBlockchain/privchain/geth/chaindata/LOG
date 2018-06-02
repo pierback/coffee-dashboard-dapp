@@ -1,154 +1,439 @@
-=============== May 12, 2018 (CEST) ===============
-16:35:46.982503 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-16:35:46.983556 db@open opening
-16:35:46.984259 version@stat F·[] S·0B[] Sc·[]
-16:35:46.984818 db@janitor F·2 G·0
-16:35:46.984935 db@open done T·1.3509ms
-=============== May 12, 2018 (CEST) ===============
-16:36:01.948222 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-16:36:01.948657 version@stat F·[] S·0B[] Sc·[]
-16:36:01.948733 db@open opening
-16:36:01.948887 journal@recovery F·1
-16:36:01.954944 journal@recovery recovering @1
-16:36:01.956177 memdb@flush created L0@2 N·14 S·867B "H\x1e\xe5..aAf,v8":"\xfc\xcda..\xb9>S,v3"
-16:36:01.962051 version@stat F·[1] S·867B[867B] Sc·[0.25]
-16:36:01.964586 db@janitor F·3 G·0
-16:36:01.964818 db@open done T·16.037939ms
-=============== May 12, 2018 (CEST) ===============
-16:36:22.815134 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-16:36:22.815510 version@stat F·[1] S·867B[867B] Sc·[0.25]
-16:36:22.815552 db@open opening
-16:36:22.815635 journal@recovery F·1
-16:36:22.820523 journal@recovery recovering @3
-16:36:22.822698 memdb@flush created L0@5 N·3 S·290B "Blo..ion,v17":"dbU..ata,v16"
-16:36:22.828126 version@stat F·[2] S·1KiB[1KiB] Sc·[0.50]
-16:36:22.829873 db@janitor F·4 G·0
-16:36:22.829964 db@open done T·14.380192ms
-=============== May 12, 2018 (CEST) ===============
-16:36:28.726261 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-16:36:28.726732 version@stat F·[2] S·1KiB[1KiB] Sc·[0.50]
-16:36:28.726847 db@open opening
-16:36:28.727061 journal@recovery F·1
-16:36:28.732986 journal@recovery recovering @6
-16:36:28.734373 memdb@flush created L0@8 N·2 S·243B "Blo..ion,v20":"Las..der,v21"
-16:36:28.738989 version@stat F·[3] S·1KiB[1KiB] Sc·[0.75]
-16:36:28.740396 db@janitor F·5 G·0
-16:36:28.740435 db@open done T·13.557801ms
-=============== May 12, 2018 (CEST) ===============
-16:36:54.305322 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-16:36:54.305612 version@stat F·[3] S·1KiB[1KiB] Sc·[0.75]
-16:36:54.305646 db@open opening
-16:36:54.305730 journal@recovery F·1
-16:36:54.310049 journal@recovery recovering @9
-16:36:54.312221 memdb@flush created L0@11 N·2 S·243B "Blo..ion,v23":"Las..der,v24"
-16:36:54.316603 version@stat F·[4] S·1KiB[1KiB] Sc·[1.00]
-16:36:54.318166 db@janitor F·6 G·0
-16:36:54.318211 db@open done T·12.546976ms
-16:36:54.318313 table@compaction L0·4 -> L1·0 S·1KiB Q·25
-16:36:54.319110 table@build created L1@14 N·16 S·932B "Blo..ion,v23":"\xfc\xcda..\xb9>S,v3"
-16:36:54.319176 version@stat F·[0 1] S·932B[0B 932B] Sc·[0.00 0.00]
-16:36:54.319556 table@compaction committed F-3 S-711B Ke·0 D·5 T·1.193155ms
-16:36:54.319790 table@remove removed @11
-16:36:54.319933 table@remove removed @8
-16:36:54.320067 table@remove removed @5
-16:36:54.320240 table@remove removed @2
-16:56:45.277383 db@close closing
-16:56:45.277959 db@close done T·561.998µs
-=============== May 12, 2018 (CEST) ===============
-17:03:45.733684 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-17:03:45.734904 version@stat F·[0 1] S·932B[0B 932B] Sc·[0.00 0.00]
-17:03:45.734950 db@open opening
-17:03:45.735016 journal@recovery F·1
-17:03:45.738944 journal@recovery recovering @12
-17:03:45.740511 memdb@flush created L0@15 N·61 S·2KiB "\x12\xc9\xe2..4\xcdb,v84":"sec..Ʈ\v,v82"
-17:03:45.744757 version@stat F·[1 1] S·3KiB[2KiB 932B] Sc·[0.25 0.00]
-17:03:45.746490 db@janitor F·4 G·0
-17:03:45.746555 db@open done T·11.587201ms
-17:09:05.269544 table@compaction L0·1 -> L1·1 S·3KiB Q·446
-17:09:05.271153 table@build created L1@18 N·58 S·3KiB "\x12\xc9\xe2..4\xcdb,v84":"\xfc\xcda..\xb9>S,v3"
-17:09:05.271339 version@stat F·[0 1] S·3KiB[0B 3KiB] Sc·[0.00 0.00]
-17:09:05.271830 table@compaction committed F-1 S-587B Ke·0 D·19 T·1.819539ms
-17:09:05.272122 table@remove removed @15
-17:09:05.272379 table@remove removed @14
-=============== May 16, 2018 (CEST) ===============
-13:44:23.644118 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-13:44:23.645588 version@stat F·[0 1] S·3KiB[0B 3KiB] Sc·[0.00 0.00]
-13:44:23.645618 db@open opening
-13:44:23.645680 journal@recovery F·1
-13:44:23.651523 journal@recovery recovering @16
-13:44:23.720803 memdb@flush created L0@19 N·27125 S·1MiB "Blo..ion,v88":"r\x00\x00..\x96\xfdG,v27208"
-13:44:23.832757 version@stat F·[1 1] S·1MiB[1MiB 3KiB] Sc·[0.25 0.00]
-13:44:23.836747 db@janitor F·4 G·0
-13:44:23.836805 db@open done T·191.164931ms
-13:44:23.855253 table@compaction L0·1 -> L1·1 S·1MiB Q·27214
-13:44:23.886504 table@build created L1@22 N·18142 S·1MiB "\x12\xc9\xe2..4\xcdb,v84":"\xfc\xcda..\xb9>S,v3"
-13:44:23.886562 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
-13:44:23.886811 table@compaction committed F-1 S-368KiB Ke·0 D·9041 T·27.872614ms
-13:44:23.887154 table@remove removed @19
-13:44:23.887408 table@remove removed @18
-15:31:09.148014 db@close closing
-15:31:09.148737 db@close done T·720.17µs
-=============== May 25, 2018 (CEST) ===============
-11:01:51.989553 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-11:01:51.991076 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
-11:01:51.991118 db@open opening
-11:01:51.991185 journal@recovery F·1
-11:01:51.996721 journal@recovery recovering @20
-11:01:52.049386 memdb@flush created L0@23 N·20313 S·1MiB "\x02\x16\x97..G\x00B,v47524":"\xc4\xec&..\xae\x9f\a,v47526"
-11:01:52.178633 version@stat F·[1 1] S·2MiB[1MiB 1MiB] Sc·[0.25 0.01]
-11:01:52.182852 db@janitor F·4 G·0
-11:01:52.182907 db@open done T·191.771171ms
-11:01:52.452329 db@close closing
-11:01:52.452617 db@close done T·285.896µs
-=============== May 25, 2018 (CEST) ===============
-11:51:21.054986 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-11:51:21.055831 version@stat F·[1 1] S·2MiB[1MiB 1MiB] Sc·[0.25 0.01]
-11:51:21.055869 db@open opening
-11:51:21.055943 journal@recovery F·1
-11:51:21.061203 journal@recovery recovering @24
-11:51:21.061788 memdb@flush created L0@26 N·2 S·243B "Blo..ion,v47528":"Las..der,v47529"
-11:51:21.065511 version@stat F·[2 1] S·2MiB[1MiB 1MiB] Sc·[0.50 0.01]
-11:51:21.066604 db@janitor F·5 G·0
-11:51:21.066637 db@open done T·10.751111ms
-12:43:04.592172 table@compaction L0·2 -> L1·1 S·2MiB Q·48324
-12:43:04.724022 table@build created L1@29 N·29428 S·1MiB "\x02\x16\x97..G\x00B,v47524":"\xfc\xcda..\xb9>S,v3"
-12:43:04.724113 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.02]
-12:43:04.726690 table@compaction committed F-2 S-272KiB Ke·0 D·9029 T·128.570422ms
-12:43:04.727194 table@remove removed @26
-12:43:04.728659 table@remove removed @23
-12:43:04.729851 table@remove removed @22
-=============== May 27, 2018 (CEST) ===============
-11:27:04.133189 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-11:27:04.134078 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.02]
-11:27:04.134125 db@open opening
-11:27:04.134222 journal@recovery F·1
-11:27:04.141124 journal@recovery recovering @27
-11:27:04.218591 memdb@flush created L0@30 N·30114 S·1MiB "B\x00\x00..98m,v66334":"r\x00\x00..\x87\x91\x0f,v77640"
-11:27:04.335274 version@stat F·[1 1] S·3MiB[1MiB 1MiB] Sc·[0.25 0.02]
-11:27:04.340883 db@janitor F·4 G·0
-11:27:04.340928 db@open done T·206.779237ms
-11:27:04.360582 table@compaction L0·1 -> L1·1 S·3MiB Q·77646
-11:27:04.478372 table@build created L1@33 N·35342 S·2MiB "\x02\x16\x97..G\x00B,v47524":"h\x00\x00..N\xc0\xb3,v58570"
-11:27:04.503325 table@build created L1@34 N·14087 S·745KiB "h\x00\x00..\xc0\xb3t,v58567":"\xfc\xcda..\xb9>S,v3"
-11:27:04.503480 version@stat F·[0 2] S·2MiB[0B 2MiB] Sc·[0.00 0.03]
-11:27:04.504040 table@compaction committed F~ S-376KiB Ke·0 D·10113 T·143.339893ms
-11:27:04.504420 table@remove removed @30
-11:27:04.510343 table@remove removed @29
-14:58:10.369138 db@close closing
-14:58:10.369477 db@close done T·345.917µs
-=============== May 27, 2018 (CEST) ===============
-14:58:24.706261 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-14:58:24.710031 version@stat F·[0 2] S·2MiB[0B 2MiB] Sc·[0.00 0.03]
-14:58:24.710102 db@open opening
-14:58:24.710251 journal@recovery F·1
-14:58:24.718021 journal@recovery recovering @31
-14:58:24.720142 memdb@flush created L0@35 N·2 S·240B "Dat..ion,v77646":"Las..der,v77647"
-14:58:24.728369 version@stat F·[1 2] S·2MiB[240B 2MiB] Sc·[0.25 0.03]
-14:58:24.730454 db@janitor F·5 G·0
-14:58:24.730516 db@open done T·20.379438ms
-14:58:25.009536 table@compaction L0·1 -> L1·1 S·2MiB Q·77650
-14:58:25.136399 table@build created L1@38 N·35343 S·2MiB "\x02\x16\x97..G\x00B,v47524":"h\x00\x00..N\xc0\xb3,v58570"
-14:58:25.136508 version@stat F·[0 2] S·2MiB[0B 2MiB] Sc·[0.00 0.03]
-14:58:25.136856 table@compaction committed F-1 S-501B Ke·0 D·1 T·127.241704ms
-14:58:25.137165 table@remove removed @35
-14:58:25.137753 table@remove removed @33
+=============== Jun 1, 2018 (CEST) ===============
+16:44:32.976602 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:44:32.977617 db@open opening
+16:44:32.979469 version@stat F·[] S·0B[] Sc·[]
+16:44:32.981341 db@janitor F·2 G·0
+16:44:32.981436 db@open done T·3.790076ms
+=============== Jun 1, 2018 (CEST) ===============
+16:46:41.338446 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:46:41.338678 version@stat F·[] S·0B[] Sc·[]
+16:46:41.338711 db@open opening
+16:46:41.338848 journal@recovery F·1
+16:46:41.344043 journal@recovery recovering @1
+16:46:41.345065 memdb@flush created L0@2 N·14 S·897B ",\xf8c..\x16\x94\x8e,v4":"\xe5F\x12..\x15n\xa4,v5"
+16:46:41.350054 version@stat F·[1] S·897B[897B] Sc·[0.25]
+16:46:41.351491 db@janitor F·3 G·0
+16:46:41.351539 db@open done T·12.806951ms
+19:10:52.837797 db@close closing
+19:10:52.838074 db@close done T·274.664µs
+=============== Jun 1, 2018 (CEST) ===============
+19:10:54.774263 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+19:10:54.774723 version@stat F·[1] S·897B[897B] Sc·[0.25]
+19:10:54.774754 db@open opening
+19:10:54.774928 journal@recovery F·1
+19:10:54.779426 journal@recovery recovering @3
+19:10:54.816278 memdb@flush created L0@5 N·11803 S·633KiB "\rY\x9a..\xe5Ժ,v11786":"\xf5\xf0\x11..\xe6\x100,v11759"
+19:10:54.819883 version@stat F·[2] S·634KiB[634KiB] Sc·[0.50]
+19:10:54.821629 db@janitor F·4 G·0
+19:10:54.821671 db@open done T·46.896365ms
+19:11:17.298574 table@compaction L0·2 -> L1·0 S·634KiB Q·11821
+19:11:17.315519 table@build created L1@8 N·7909 S·473KiB "\rY\x9a..\xe5Ժ,v11786":"\xf5\xf0\x11..\xe6\x100,v11759"
+19:11:17.315602 version@stat F·[0 1] S·473KiB[0B 473KiB] Sc·[0.00 0.00]
+19:11:17.315877 table@compaction committed F-1 S-161KiB Ke·0 D·3908 T·17.21516ms
+19:11:17.316143 table@remove removed @5
+19:11:17.316350 table@remove removed @2
+19:42:21.725545 db@close closing
+19:42:21.725855 db@close done T·302.75µs
+=============== Jun 1, 2018 (CEST) ===============
+19:42:22.561051 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+19:42:22.561609 version@stat F·[0 1] S·473KiB[0B 473KiB] Sc·[0.00 0.00]
+19:42:22.561642 db@open opening
+19:42:22.561707 journal@recovery F·1
+19:42:22.565616 journal@recovery recovering @6
+19:42:22.576495 memdb@flush created L0@9 N·2937 S·158KiB "\x0e\x18H..\xc8\x1e\x10,v14742":"\xf2U\xdb..*HM,v14751"
+19:42:22.580577 version@stat F·[1 1] S·632KiB[158KiB 473KiB] Sc·[0.25 0.00]
+19:42:22.581794 db@janitor F·4 G·0
+19:42:22.581852 db@open done T·20.174686ms
+19:51:56.752672 table@compaction L0·1 -> L1·1 S·632KiB Q·15545
+19:51:56.787011 table@build created L1@12 N·9874 S·592KiB "\rY\x9a..\xe5Ժ,v11786":"\xf5\xf0\x11..\xe6\x100,v11759"
+19:51:56.787104 version@stat F·[0 1] S·592KiB[0B 592KiB] Sc·[0.00 0.01]
+19:51:56.787836 table@compaction committed F-1 S-39KiB Ke·0 D·972 T·33.559647ms
+19:51:56.788204 table@remove removed @9
+19:51:56.788464 table@remove removed @8
+20:04:23.438461 db@close closing
+20:04:23.440557 db@close done T·2.087608ms
+=============== Jun 2, 2018 (CEST) ===============
+09:43:05.688580 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+09:43:05.689720 version@stat F·[0 1] S·592KiB[0B 592KiB] Sc·[0.00 0.01]
+09:43:05.689756 db@open opening
+09:43:05.689846 journal@recovery F·1
+09:43:05.697257 journal@recovery recovering @10
+09:43:05.704306 memdb@flush created L0@13 N·1771 S·96KiB "\v\xd5t..\b1\xd0,v16525":"\xf8\xb5\xe1..}\x0fG,v16524"
+09:43:05.708035 version@stat F·[1 1] S·688KiB[96KiB 592KiB] Sc·[0.25 0.01]
+09:43:05.709518 db@janitor F·4 G·0
+09:43:05.709557 db@open done T·19.77702ms
+09:47:37.382302 table@compaction L0·1 -> L1·1 S·688KiB Q·17062
+09:47:37.413000 table@build created L1@16 N·11058 S·662KiB "\v\xd5t..\b1\xd0,v16525":"\xf8\xb5\xe1..}\x0fG,v16524"
+09:47:37.413374 version@stat F·[0 1] S·662KiB[0B 662KiB] Sc·[0.00 0.01]
+09:47:37.413957 table@compaction committed F-1 S-26KiB Ke·0 D·587 T·30.921131ms
+09:47:37.414182 table@remove removed @13
+09:47:37.414913 table@remove removed @12
+10:36:56.112571 db@close closing
+10:36:56.112980 db@close done T·405.48µs
+=============== Jun 2, 2018 (CEST) ===============
+10:36:57.685661 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+10:36:57.688230 version@stat F·[0 1] S·662KiB[0B 662KiB] Sc·[0.00 0.01]
+10:36:57.688294 db@open opening
+10:36:57.688416 journal@recovery F·1
+10:36:57.695706 journal@recovery recovering @14
+10:36:57.718932 memdb@flush created L0@17 N·3761 S·225KiB "\x04|\x06..\xb0p\x01,v20265":"\xfeX\xe2..\xd1So,v20205"
+10:36:57.727622 version@stat F·[1 1] S·888KiB[225KiB 662KiB] Sc·[0.25 0.01]
+10:36:57.730322 db@janitor F·4 G·0
+10:36:57.730399 db@open done T·42.074158ms
+10:47:25.145257 table@compaction L0·1 -> L1·1 S·888KiB Q·21092
+10:47:25.184784 table@build created L1@20 N·13591 S·834KiB "\x04|\x06..\xb0p\x01,v20265":"\xfeX\xe2..\xd1So,v20205"
+10:47:25.184876 version@stat F·[0 1] S·834KiB[0B 834KiB] Sc·[0.00 0.01]
+10:47:25.185420 table@compaction committed F-1 S-53KiB Ke·0 D·1228 T·38.479008ms
+10:47:25.185737 table@remove removed @17
+10:47:25.186028 table@remove removed @16
+11:09:52.055243 db@close closing
+11:09:52.056937 db@close done T·1.688803ms
+=============== Jun 2, 2018 (CEST) ===============
+11:10:33.063780 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:10:33.064425 version@stat F·[0 1] S·834KiB[0B 834KiB] Sc·[0.00 0.01]
+11:10:33.064483 db@open opening
+11:10:33.064614 journal@recovery F·1
+11:10:33.071860 journal@recovery recovering @18
+11:10:33.089536 memdb@flush created L0@21 N·2355 S·131KiB "\x04\x14\x1b..\b\xa1\xc3,v22640":"\xf7\x9dL..U3\xe3,v22609"
+11:10:33.096262 version@stat F·[1 1] S·966KiB[131KiB 834KiB] Sc·[0.25 0.01]
+11:10:33.100746 db@janitor F·4 G·0
+11:10:33.100829 db@open done T·36.296561ms
+11:21:23.268552 table@compaction L0·1 -> L1·1 S·966KiB Q·23446
+11:21:23.270537 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000024.ldb: no such file or directory"
+11:21:24.271409 table@build retrying N·1
+11:21:24.271574 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000025.ldb: no such file or directory"
+11:21:32.271740 table@build retrying N·2
+11:21:32.271957 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000026.ldb: no such file or directory"
+11:21:40.273037 table@build retrying N·3
+11:21:40.273199 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000027.ldb: no such file or directory"
+11:21:48.274035 table@build retrying N·4
+11:21:48.274229 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000028.ldb: no such file or directory"
+11:21:56.274863 table@build retrying N·5
+11:21:56.275063 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000029.ldb: no such file or directory"
+11:22:04.278197 table@build retrying N·6
+11:22:04.278415 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000030.ldb: no such file or directory"
+11:22:12.280433 table@build retrying N·7
+11:22:12.280613 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000031.ldb: no such file or directory"
+11:22:20.281217 table@build retrying N·8
+11:22:20.281463 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000032.ldb: no such file or directory"
+11:22:28.286081 table@build retrying N·9
+11:22:28.286274 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000033.ldb: no such file or directory"
+11:22:36.287564 table@build retrying N·10
+11:22:36.289277 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000034.ldb: no such file or directory"
+11:22:44.289515 table@build retrying N·11
+11:22:44.289669 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000035.ldb: no such file or directory"
+11:22:52.289881 table@build retrying N·12
+11:22:52.290095 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000036.ldb: no such file or directory"
+11:23:00.290351 table@build retrying N·13
+11:23:00.290538 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000037.ldb: no such file or directory"
+11:23:08.291446 table@build retrying N·14
+11:23:08.291631 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000038.ldb: no such file or directory"
+11:23:16.292087 table@build retrying N·15
+11:23:16.293773 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000039.ldb: no such file or directory"
+11:23:24.294091 table@build retrying N·16
+11:23:24.294247 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000040.ldb: no such file or directory"
+11:23:32.295560 table@build retrying N·17
+11:23:32.295757 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000041.ldb: no such file or directory"
+11:23:40.298514 table@build retrying N·18
+11:23:40.298732 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000042.ldb: no such file or directory"
+11:23:48.301119 table@build retrying N·19
+11:23:48.301317 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000043.ldb: no such file or directory"
+11:23:56.304916 table@build retrying N·20
+11:23:56.305075 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000044.ldb: no such file or directory"
+11:24:04.308933 table@build retrying N·21
+11:24:04.309203 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000045.ldb: no such file or directory"
+11:24:12.309717 table@build retrying N·22
+11:24:12.309861 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000046.ldb: no such file or directory"
+11:24:20.313556 table@build retrying N·23
+11:24:20.313746 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000047.ldb: no such file or directory"
+11:24:28.314214 table@build retrying N·24
+11:24:28.314677 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000048.ldb: no such file or directory"
+11:24:36.315048 table@build retrying N·25
+11:24:36.315232 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000049.ldb: no such file or directory"
+11:24:44.319709 table@build retrying N·26
+11:24:44.319928 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000050.ldb: no such file or directory"
+11:24:52.324900 table@build retrying N·27
+11:24:52.325045 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000051.ldb: no such file or directory"
+11:25:00.327062 table@build retrying N·28
+11:25:00.327286 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000052.ldb: no such file or directory"
+11:25:08.331568 table@build retrying N·29
+11:25:08.331747 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000053.ldb: no such file or directory"
+11:25:16.334165 table@build retrying N·30
+11:25:16.334387 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000054.ldb: no such file or directory"
+11:25:24.335416 table@build retrying N·31
+11:25:24.335629 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000055.ldb: no such file or directory"
+11:25:32.336448 table@build retrying N·32
+11:25:32.336618 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000056.ldb: no such file or directory"
+11:25:40.338051 table@build retrying N·33
+11:25:40.338217 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000057.ldb: no such file or directory"
+11:25:48.338424 table@build retrying N·34
+11:25:48.338626 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000058.ldb: no such file or directory"
+11:25:56.343799 table@build retrying N·35
+11:25:56.343985 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000059.ldb: no such file or directory"
+11:26:04.344830 table@build retrying N·36
+11:26:04.345008 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000060.ldb: no such file or directory"
+11:26:12.348931 table@build retrying N·37
+11:26:12.349106 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000061.ldb: no such file or directory"
+11:26:20.349333 table@build retrying N·38
+11:26:20.349505 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000062.ldb: no such file or directory"
+11:26:28.351219 table@build retrying N·39
+11:26:28.351412 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000063.ldb: no such file or directory"
+11:26:36.351935 table@build retrying N·40
+11:26:36.352167 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000064.ldb: no such file or directory"
+11:26:44.357354 table@build retrying N·41
+11:26:44.357546 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000065.ldb: no such file or directory"
+11:26:52.360019 table@build retrying N·42
+11:26:52.360236 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000066.ldb: no such file or directory"
+11:27:00.365434 table@build retrying N·43
+11:27:00.365643 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000067.ldb: no such file or directory"
+11:27:08.369923 table@build retrying N·44
+11:27:08.370092 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000068.ldb: no such file or directory"
+11:27:16.371154 table@build retrying N·45
+11:27:16.371334 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000069.ldb: no such file or directory"
+11:27:24.371565 table@build retrying N·46
+11:27:24.371742 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000070.ldb: no such file or directory"
+11:27:32.375344 table@build retrying N·47
+11:27:32.375518 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000071.ldb: no such file or directory"
+11:27:40.378908 table@build retrying N·48
+11:27:40.379085 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000072.ldb: no such file or directory"
+11:27:48.383184 table@build retrying N·49
+11:27:48.383394 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000073.ldb: no such file or directory"
+11:27:56.386325 table@build retrying N·50
+11:27:56.386505 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000074.ldb: no such file or directory"
+11:28:04.389768 table@build retrying N·51
+11:28:04.389928 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000075.ldb: no such file or directory"
+11:28:12.390845 table@build retrying N·52
+11:28:12.391035 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000076.ldb: no such file or directory"
+11:28:20.392522 table@build retrying N·53
+11:28:20.392738 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000077.ldb: no such file or directory"
+11:28:28.397483 table@build retrying N·54
+11:28:28.397679 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000078.ldb: no such file or directory"
+11:28:36.398047 table@build retrying N·55
+11:28:36.398257 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000079.ldb: no such file or directory"
+11:28:44.402489 table@build retrying N·56
+11:28:44.402681 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000080.ldb: no such file or directory"
+11:28:52.407838 table@build retrying N·57
+11:28:52.407975 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000081.ldb: no such file or directory"
+11:29:00.408155 table@build retrying N·58
+11:29:00.408365 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000082.ldb: no such file or directory"
+11:29:08.408608 table@build retrying N·59
+11:29:08.408766 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000083.ldb: no such file or directory"
+11:29:16.409414 table@build retrying N·60
+11:29:16.409626 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000084.ldb: no such file or directory"
+11:29:24.410364 table@build retrying N·61
+11:29:24.410549 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000085.ldb: no such file or directory"
+11:29:32.411182 table@build retrying N·62
+11:29:32.411376 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000086.ldb: no such file or directory"
+11:29:40.412585 table@build retrying N·63
+11:29:40.412771 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000087.ldb: no such file or directory"
+11:29:48.419870 table@build retrying N·64
+11:29:48.420028 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000088.ldb: no such file or directory"
+11:29:56.420659 table@build retrying N·65
+11:29:56.420844 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000089.ldb: no such file or directory"
+11:30:04.421143 table@build retrying N·66
+11:30:04.421324 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000090.ldb: no such file or directory"
+11:30:12.421734 table@build retrying N·67
+11:30:12.421958 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000091.ldb: no such file or directory"
+11:30:20.422370 table@build retrying N·68
+11:30:20.422561 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000092.ldb: no such file or directory"
+11:30:28.423338 table@build retrying N·69
+11:30:28.423523 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000093.ldb: no such file or directory"
+11:30:36.427033 table@build retrying N·70
+11:30:36.427205 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000094.ldb: no such file or directory"
+11:30:44.428598 table@build retrying N·71
+11:30:44.428784 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000095.ldb: no such file or directory"
+11:30:52.437939 table@build retrying N·72
+11:30:52.438115 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000096.ldb: no such file or directory"
+11:31:00.445922 table@build retrying N·73
+11:31:00.446134 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000097.ldb: no such file or directory"
+11:31:08.448490 table@build retrying N·74
+11:31:08.448667 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000098.ldb: no such file or directory"
+11:31:16.458595 table@build retrying N·75
+11:31:16.458860 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000099.ldb: no such file or directory"
+11:31:24.461236 table@build retrying N·76
+11:31:24.461449 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000100.ldb: no such file or directory"
+11:31:32.467044 table@build retrying N·77
+11:31:32.467278 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000101.ldb: no such file or directory"
+11:31:40.474393 table@build retrying N·78
+11:31:40.474577 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000102.ldb: no such file or directory"
+11:31:48.478941 table@build retrying N·79
+11:31:48.479124 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000103.ldb: no such file or directory"
+11:31:56.479474 table@build retrying N·80
+11:31:56.479687 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000104.ldb: no such file or directory"
+11:32:04.480314 table@build retrying N·81
+11:32:04.480538 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000105.ldb: no such file or directory"
+11:32:12.481132 table@build retrying N·82
+11:32:12.481341 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000106.ldb: no such file or directory"
+11:32:20.482384 table@build retrying N·83
+11:32:20.482614 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000107.ldb: no such file or directory"
+11:32:28.485904 table@build retrying N·84
+11:32:28.486109 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000108.ldb: no such file or directory"
+11:32:36.495467 table@build retrying N·85
+11:32:36.495660 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000109.ldb: no such file or directory"
+11:32:44.496979 table@build retrying N·86
+11:32:44.497193 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000110.ldb: no such file or directory"
+11:32:52.502946 table@build retrying N·87
+11:32:52.503180 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000111.ldb: no such file or directory"
+11:33:00.503466 table@build retrying N·88
+11:33:00.503654 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000112.ldb: no such file or directory"
+11:33:08.505152 table@build retrying N·89
+11:33:08.505373 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000113.ldb: no such file or directory"
+11:33:16.514158 table@build retrying N·90
+11:33:16.514363 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000114.ldb: no such file or directory"
+11:33:24.517284 table@build retrying N·91
+11:33:24.517582 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000115.ldb: no such file or directory"
+11:33:32.518106 table@build retrying N·92
+11:33:32.518297 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000116.ldb: no such file or directory"
+11:33:40.519736 table@build retrying N·93
+11:33:40.519941 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000117.ldb: no such file or directory"
+11:33:48.521359 table@build retrying N·94
+11:33:48.521543 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000118.ldb: no such file or directory"
+11:33:56.523371 table@build retrying N·95
+11:33:56.523793 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000119.ldb: no such file or directory"
+11:34:04.525787 table@build retrying N·96
+11:34:04.525953 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000120.ldb: no such file or directory"
+11:34:12.529286 table@build retrying N·97
+11:34:12.529502 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000121.ldb: no such file or directory"
+11:34:20.536938 table@build retrying N·98
+11:34:20.537148 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000122.ldb: no such file or directory"
+11:34:28.546546 table@build retrying N·99
+11:34:28.546703 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000123.ldb: no such file or directory"
+11:34:36.552406 table@build retrying N·100
+11:34:36.552585 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000124.ldb: no such file or directory"
+11:34:44.555988 table@build retrying N·101
+11:34:44.556194 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000125.ldb: no such file or directory"
+11:34:52.561305 table@build retrying N·102
+11:34:52.561705 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000126.ldb: no such file or directory"
+11:35:00.562741 table@build retrying N·103
+11:35:00.562894 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000127.ldb: no such file or directory"
+11:35:08.563177 table@build retrying N·104
+11:35:08.563350 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000128.ldb: no such file or directory"
+11:35:16.325375 db@close closing
+11:35:16.325459 table@build exiting
+11:35:16.325705 db@close done T·328.789µs
+=============== Jun 2, 2018 (CEST) ===============
+11:35:27.419147 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:35:27.420107 version@stat F·[1 1] S·966KiB[131KiB 834KiB] Sc·[0.25 0.01]
+11:35:27.420295 db@open opening
+11:35:27.420429 journal@recovery F·1
+11:35:27.425085 journal@recovery recovering @22
+11:35:27.436101 memdb@flush created L0@24 N·1875 S·98KiB "\x12\xb2A..\xf4}\xb8,v24518":"\xef\xc2l..f~\x87,v24522"
+11:35:27.442165 version@stat F·[2 1] S·1MiB[230KiB 834KiB] Sc·[0.50 0.01]
+11:35:27.444562 db@janitor F·5 G·0
+11:35:27.444661 db@open done T·24.317328ms
+11:35:48.209409 table@compaction L0·2 -> L1·1 S·1MiB Q·24534
+11:35:48.257084 table@build created L1@27 N·16421 S·1007KiB "\x04\x14\x1b..\b\xa1\xc3,v22640":"\xfeX\xe2..\xd1So,v20205"
+11:35:48.257178 version@stat F·[0 1] S·1007KiB[0B 1007KiB] Sc·[0.00 0.01]
+11:35:48.257497 table@compaction committed F-2 S-57KiB Ke·0 D·1400 T·47.959962ms
+11:35:48.257760 table@remove removed @24
+11:35:48.258055 table@remove removed @21
+11:35:48.258600 table@remove removed @20
+11:57:08.692074 db@close closing
+11:57:08.692723 db@close done T·647.109µs
+=============== Jun 2, 2018 (CEST) ===============
+11:57:10.164579 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:57:10.166638 version@stat F·[0 1] S·1007KiB[0B 1007KiB] Sc·[0.00 0.01]
+11:57:10.166812 db@open opening
+11:57:10.167372 journal@recovery F·1
+11:57:10.173934 journal@recovery recovering @25
+11:57:10.180507 memdb@flush created L0@28 N·1382 S·90KiB "\tKZ..8\xaa\xc5,v25859":"\xff\xd5h..]\bD,v25833"
+11:57:10.185703 version@stat F·[1 1] S·1MiB[90KiB 1007KiB] Sc·[0.25 0.01]
+11:57:10.187758 db@janitor F·4 G·0
+11:57:10.187901 db@open done T·21.02745ms
+11:57:23.836216 db@close closing
+11:57:23.837699 db@close done T·1.479859ms
+=============== Jun 2, 2018 (CEST) ===============
+11:57:28.122316 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:57:28.122595 version@stat F·[1 1] S·1MiB[90KiB 1007KiB] Sc·[0.25 0.01]
+11:57:28.122640 db@open opening
+11:57:28.122729 journal@recovery F·1
+11:57:28.128133 journal@recovery recovering @29
+11:57:28.130308 memdb@flush created L0@31 N·2 S·239B "Dat..ion,v25907":"Las..der,v25908"
+11:57:28.135091 version@stat F·[2 1] S·1MiB[91KiB 1007KiB] Sc·[0.50 0.01]
+11:57:28.136486 db@janitor F·5 G·0
+11:57:28.136537 db@open done T·13.867989ms
+12:03:14.889642 db@close closing
+12:03:14.891417 db@close done T·1.772147ms
+=============== Jun 2, 2018 (CEST) ===============
+12:03:15.598008 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+12:03:15.598569 version@stat F·[2 1] S·1MiB[91KiB 1007KiB] Sc·[0.50 0.01]
+12:03:15.598598 db@open opening
+12:03:15.598674 journal@recovery F·1
+12:03:15.603073 journal@recovery recovering @32
+12:03:15.604741 memdb@flush created L0@34 N·290 S·19KiB "\v8\xed..\x14ߐ,v26198":"\xf4eX..\xfa߁,v26181"
+12:03:15.608328 version@stat F·[3 1] S·1MiB[111KiB 1007KiB] Sc·[0.75 0.01]
+12:03:15.609943 db@janitor F·6 G·0
+12:03:15.610067 db@open done T·11.450627ms
+12:03:53.421763 table@compaction L0·3 -> L1·1 S·1MiB Q·26202
+12:03:53.483531 table@build created L1@37 N·17556 S·1MiB "\x04\x14\x1b..\b\xa1\xc3,v22640":"\xff\xd5h..]\bD,v25833"
+12:03:53.483683 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
+12:03:53.483989 table@compaction committed F-3 S-22KiB Ke·0 D·539 T·62.081526ms
+12:03:53.484297 table@remove removed @34
+12:03:53.484541 table@remove removed @31
+12:03:53.484770 table@remove removed @28
+12:03:53.485120 table@remove removed @27
+12:09:11.022814 db@close closing
+12:09:11.023056 db@close done T·239.285µs
+=============== Jun 2, 2018 (CEST) ===============
+12:09:11.732913 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+12:09:11.733190 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
+12:09:11.733221 db@open opening
+12:09:11.733303 journal@recovery F·1
+12:09:11.738717 journal@recovery recovering @35
+12:09:11.741992 memdb@flush created L0@38 N·287 S·15KiB "$}\xdf..\xab\xa8\xb7,v26487":"\xff\x10\xbe..\xae\xfe+,v26486"
+12:09:11.746557 version@stat F·[1 1] S·1MiB[15KiB 1MiB] Sc·[0.25 0.01]
+12:09:11.748345 db@janitor F·4 G·0
+12:09:11.748920 db@open done T·15.6604ms
+12:09:51.180040 table@compaction L0·1 -> L1·1 S·1MiB Q·26490
+12:09:51.208987 table@build created L1@41 N·17748 S·1MiB "\x04\x14\x1b..\b\xa1\xc3,v22640":"\xff\xd5h..]\bD,v25833"
+12:09:51.209058 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
+12:09:51.209310 table@compaction committed F-1 S-1KiB Ke·0 D·95 T·29.18131ms
+12:09:51.209546 table@remove removed @38
+12:09:51.209846 table@remove removed @37
+12:13:32.022620 db@close closing
+12:13:32.023314 db@close done T·690.996µs
+=============== Jun 2, 2018 (CEST) ===============
+12:13:33.298048 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+12:13:33.298760 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
+12:13:33.298813 db@open opening
+12:13:33.298947 journal@recovery F·1
+12:13:33.305781 journal@recovery recovering @39
+12:13:33.307875 memdb@flush created L0@42 N·212 S·11KiB "\t3\xd1..\xc5'\x9d,v26700":"\xfd\xf3\xb5..\x84Z ,v26692"
+12:13:33.314041 version@stat F·[1 1] S·1MiB[11KiB 1MiB] Sc·[0.25 0.01]
+12:13:33.323905 db@janitor F·4 G·0
+12:13:33.324004 db@open done T·25.145377ms
+12:14:35.134528 db@close closing
+12:14:35.134726 db@close done T·194.497µs
+=============== Jun 2, 2018 (CEST) ===============
+12:14:36.430071 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+12:14:36.430432 version@stat F·[1 1] S·1MiB[11KiB 1MiB] Sc·[0.25 0.01]
+12:14:36.430481 db@open opening
+12:14:36.430603 journal@recovery F·1
+12:14:36.436572 journal@recovery recovering @43
+12:14:36.438715 memdb@flush created L0@45 N·2 S·239B "Dat..ion,v26702":"Las..der,v26703"
+12:14:36.444512 version@stat F·[2 1] S·1MiB[12KiB 1MiB] Sc·[0.50 0.01]
+12:14:36.446154 db@janitor F·5 G·0
+12:14:36.446247 db@open done T·15.720486ms
+12:19:18.996596 table@compaction L0·2 -> L1·1 S·1MiB Q·26963
+12:19:19.060434 table@build created L1@48 N·17892 S·1MiB "\x04\x14\x1b..\b\xa1\xc3,v22640":"\xff\xd5h..]\bD,v25833"
+12:19:19.060525 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
+12:19:19.061106 table@compaction committed F-2 S-2KiB Ke·0 D·70 T·64.180764ms
+12:19:19.061398 table@remove removed @45
+12:19:19.061738 table@remove removed @42
+12:19:19.062126 table@remove removed @41
+=============== Jun 2, 2018 (CEST) ===============
+12:28:02.072389 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+12:28:02.073576 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
+12:28:02.073650 db@open opening
+12:28:02.073794 journal@recovery F·1
+12:28:02.079335 journal@recovery recovering @46
+12:28:02.081468 memdb@flush created L0@49 N·353 S·15KiB "Dat..ion,v26705":"r\x00\x00..\xe1\x81\xd7,v27053"
+12:28:02.084968 version@stat F·[1 1] S·1MiB[15KiB 1MiB] Sc·[0.25 0.01]
+12:28:02.086354 db@janitor F·4 G·0
+12:28:02.086390 db@open done T·12.706255ms
+12:32:52.710010 table@compaction L0·1 -> L1·1 S·1MiB Q·27331
+12:32:52.751106 table@build created L1@52 N·18126 S·1MiB "\x04\x14\x1b..\b\xa1\xc3,v22640":"\xff\xd5h..]\bD,v25833"
+12:32:52.751193 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.01]
+12:32:52.751478 table@compaction committed F-1 S-3KiB Ke·0 D·119 T·41.365148ms
+12:32:52.751730 table@remove removed @49
+12:32:52.751986 table@remove removed @48
