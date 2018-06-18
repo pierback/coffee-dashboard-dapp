@@ -64,10 +64,10 @@ export default {
   methods: {
     onSubmit(evt) {
       //console.log('Register', this.form, window.location);
-      //window.location.replace('http://localhost:3003/api/login');
+      //window.location.replace('http://192.168.188.95:3003/api/login');
       evt.preventDefault();
       axios
-        .post(`http://localhost:3003/api/register`, this.form)
+        .post(`http://192.168.188.95:3003/api/register`, this.form)
         .then(response => {
           // JSON responses are automatically parsed.
           //console.log('Register', window.location);
@@ -89,7 +89,7 @@ export default {
   /*created(evt) {
   console.log(evt)
     evt.preventDefault()
-    axios.post(`http://localhost:3003/api/register`, this.form)
+    axios.post(`http://192.168.188.95:3003/api/register`, this.form)
     .then(response => {
       // JSON responses are automatically parsed.
       this.form = response.data

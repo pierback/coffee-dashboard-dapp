@@ -13,7 +13,8 @@ const solc = require('solc');
 const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 const web3Admin = require('web3admin');
 
-// setInterval(() => web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 100000), 100000 - 1);
+
+setInterval(() => web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 100000), 100000 - 1);
 // const [contractAddress] = web3.eth.accounts;
 
 let userManagement;
@@ -27,21 +28,27 @@ function readJSONFile(jsonPath) {
     }
 }
 
-
 async function getContract() {
-    const contractData = readJSONFile('../contractConfig.json');
+    /* const contractData = readJSONFile('../contractConfig.json');
+
     if (contractData) {
         console.log('contractData', contractData.address);
         const deployedContract = web3.eth.contract(contractData.abi);
         const deployedInstance = deployedContract.at(contractData.address);
         console.log('Nothing more to deploy', deployedInstance.ready.call());
         return deployedInstance;
-    }
+    } */
     console.log('Start');
     const input = fs.readFileSync('./../ownBlockchain/contracts/UserManagement.sol');// ('../ownBlockchain/contracts/UserManagement.sol');
     const output = solc.compile(input.toString(), 1);
     const { bytecode } = output.contracts[':UserManagement'];
     const abi = JSON.parse(output.contracts[':UserManagement'].interface);
+
+    const deployedContract = web3.eth.contract(abi);
+    const deployedInstance = deployedContract.at('0xd21cc3a6bf14a1e9f25b76333f38738cafe0453c');
+    console.log('Nothing more to deploy', deployedInstance.ready.call());
+    return deployedInstance;
+
     const gasEstimate = web3.eth.estimateGas({
         data: `0x${bytecode}`,
     });
@@ -69,6 +76,7 @@ async function getContract() {
     });
 }
 
+
 async function init() {
     console.log('init');
     web3Admin.extend(web3);
@@ -89,7 +97,6 @@ app.set('superSecret', 'SomeSecretString');
 const port = process.env.PORT || 3003;
 
 const router = express.Router();
-
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -97,15 +104,17 @@ app.use((req, res, next) => {
     next();
 });
 
-router.route('/register/')
+router
+    .route('/register/')
     .post((req, res) => {
         console.log(req.body);
         web3.personal.newAccount(req.body.password, (error, address) => {
             console.log('new Account', address);
             // console.log('newContractInstance', newContractInstance, newContractInstance === contractInstance, contractInstance);
             web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 10000);
-            const returnVal = userManagement.insertUser(req.body.email, address, 0, { from: web3.eth.defaultAccount });
-            // console.log('User index', web3.toAscii(returnVal));// , web3.utils.hexToNumberString(returnVal[2]));// index, 'Email', email);
+            const newUser = web3.toHex(req.body.email);
+            const returnVal = userManagement.insertUser(newUser, address, { gas: 47000 });
+            console.log('New User: ', returnVal);
             if (returnVal) {
                 res.json({
                     status: 200,
@@ -120,33 +129,119 @@ router.route('/register/')
         });
     });
 
-router.route('/login')
+function getCoffeeString(...coffeeCode) {
+    const [size, strength] = coffeeCode;
+    const mapping = {
+        size: {
+            0: 'Small',
+            1: 'Big',
+        }[size],
+        strength: {
+            0: 'Mild',
+            1: 'Normal',
+            2: 'Strong',
+        }[strength],
+    };
+    return `${mapping.size} & ${mapping.strength}`;
+}
+
+function getUserConsumption(contract, user) {
+    const coffeeCodes = [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]];
+    return coffeeCodes.reduce((consumArr, el) => {
+        console.log(`el${el}`);
+        const coffeeObj = { [getCoffeeString(...el)]: contract.getUserCoffeeCnt(user, ...el, { gas: 47000 }) };
+        consumArr.push(coffeeObj);
+        return consumArr;
+    }, []);
+}
+
+function getOverallConsumption(contract) {
+    const coffeeCodes = [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]];
+    return coffeeCodes.reduce((consumArr, el) => {
+        const coffeeObj = { [getCoffeeString(...el)]: contract.getOverallCoffeeCnt(...el, { gas: 47000 }) };
+        consumArr.push(coffeeObj);
+        return consumArr;
+    }, []);
+}
+
+router
+    .route('/getuserdata/:email')
+    .get((req, res) => {
+        const user = web3.toHex(req.params.email);
+        const userConsumption = getUserConsumption(userManagement, user);
+        const overallConsumption = getOverallConsumption(userManagement);
+        console.log('​user', user);
+        return res.status(200).json({
+            userConsumption,
+            overallConsumption,
+        });
+    });
+
+const getCoffeCode = (coffeeSize, coffeeStrength) => {
+    const size = coffeeSize.toLowerCase();
+    const strength = coffeeStrength.toLowerCase();
+
+    return {
+        size: {
+            small: 0,
+            big: 1,
+        }[size],
+        strength: {
+            mild: 0,
+            normal: 1,
+            strong: 2,
+        }[strength],
+    };
+};
+
+router
+    .route('/insertcoffee')
     .post((req, res) => {
-        console.log('req', req.body);
+        const email = web3.toHex(req.body.email);
+        console.log('insertcoffee', req.body);
+        const { size, strength } = getCoffeCode(req.body.size, req.body.strength);
+        res.status(200).json({ coffee: getCoffeeString(size, strength) });
+        userManagement.insertCoffee(email, size, strength, { gas: 47000 });
+        /*
+        if (inserted) {
+            return res.status(200).json(getCoffeeString(size, strength));
+        } */
+    });
+
+
+router
+    .route('/login')
+    .post((req, res) => {
         const payload = {
-            username: req.body.username,
+            email: req.body.email,
         };
         const token = jwt.sign(payload, app.get('superSecret'), {
             expiresIn: 60 * 60 * 24, // expires in 24 hours
         });
-
         if (userManagement) {
             web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 10000);
-            const [ethAddress, coffeeCnt] = userManagement.getUser(req.body.username);
-            console.log('coffeeCnt', coffeeCnt, 'ethAddress', ethAddress);
-            const isUnlocked = web3.personal.unlockAccount(`${ethAddress}`, req.body.password, 100); // Use Geth API for unlocking the account
+            const user = web3.toHex(req.body.email);
+            console.log('​req.body.email', req.body.email, `user ${user}`);
+            const ethAddress = userManagement.getUser(user);
+            console.log('Email', req.body.email, 'ethAddress', ethAddress);
+            const isUnlocked = web3.personal.unlockAccount(ethAddress, req.body.password, 1000000); // Use Geth API for unlocking the account
+
             if (isUnlocked) {
-                res.status(200).json({
-                    message: `You have succesfully loggedin: ${req.body.username}`,
-                    user: req.body.username,
+                return res.status(200).json({
+                    message: `You have succesfully loggedin: ${req.body.email}`,
+                    user: {
+                        name: req.body.email,
+                        coffeeConsumption: {},
+                    },
+                    overallConsumption: {},
+                    email: req.body.email,
                     token,
                 });
-            } else {
-                return res.status(401).json({
-                    status: 401,
-                    message: 'Invalid username and password.',
-                });
             }
+            return res.status(401).json({
+                status: 401,
+                message: 'Invalid username & password.',
+            });
         }
     });
 
@@ -190,4 +285,4 @@ app.get('/*', (req, res) => {
         root: __dirname,
     });
 });
-app.listen(port);
+app.listen(port, '192.168.188.95');
