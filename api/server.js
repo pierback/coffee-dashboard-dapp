@@ -13,11 +13,12 @@ const solc = require('solc');
 const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 const web3Admin = require('web3admin');
 
+let parentAddress;
 
 setInterval(() => web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 100000), 100000 - 1);
 // const [contractAddress] = web3.eth.accounts;
 
-let userManagement;
+let userController;
 init();
 // Compile the source code
 function readJSONFile(jsonPath) {
@@ -26,6 +27,74 @@ function readJSONFile(jsonPath) {
     } catch (error) {
         return null;
     }
+}
+
+function findImports(contractsPath) {
+    if (contractsPath === 'UserStorage.sol') {
+        return { contents: inputStorage.toString() };
+    }
+    if (contractsPath === 'UserController.sol') {
+        return { contents: inputController.toString() };
+    }
+    return { error: 'File not found' };
+}
+
+async function deployParent() {
+    /* const inputParent = fs.readFileSync('./../ownBlockchain/contracts/Parent.sol');// ('../ownBlockchain/contracts/Parent.sol');
+    const inputStorage = fs.readFileSync('./../ownBlockchain/contracts/UserStorage.sol');// ('../ownBlockchain/contracts/Parent.sol');
+    const inputController = fs.readFileSync('./../ownBlockchain/contracts/UserController.sol');// ('../ownBlockchain/contracts/Parent.sol');
+ */
+    const input = {
+        'Parent.sol': fs.readFileSync('./../ownBlockchain/contracts/Parent.sol', 'utf8'),
+        'UserStorage.sol': fs.readFileSync('./../ownBlockchain/contracts/UserStorage.sol', 'utf8'),
+        'UserController.sol': fs.readFileSync('./../ownBlockchain/contracts/UserController.sol', 'utf8'),
+    };
+    const output = solc.compile({ sources: input }, 1);
+    console.log('​deployParent');
+    const abi = JSON.parse(output.contracts['Parent.sol:Parent'].interface);
+    const { bytecode } = output.contracts['Parent.sol:Parent'];
+    const gasEstimate = web3.eth.estimateGas({
+        data: `0x${bytecode}`,
+    });
+    const contract = web3.eth.contract(abi);
+
+    /*  const deployedContract = web3.eth.contract(abi);
+    const deployedInstance = deployedContract.at('0x3869e1f5dc610375e56b898f61f09044ce37065c');
+    console.log('Nothing more to deploy');
+    return deployedInstance; */
+    // Contract object
+    // Deploy contract instance
+    const deployed = contract.new({
+        data: `0x${bytecode}`,
+        from: web3.eth.defaultAccount,
+        gas: gasEstimate,
+    }, (err, res) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        // If we have an address property, the contract was deployed
+        if (res.address) {
+            parentAddress = res.address;
+            console.log('Inside parentAddress', parentAddress);
+            const parent = contract.at(res.address);
+            // parent.createUserController({ gas: 2000000 });
+            parent.createUserController({ gas: 3091745 }, (error, result) => {
+                if (error) console.log('error', error);
+                
+                // console.log(`UserController Address ${parent.getUserController({ gas: 77000 })}`);
+                setTimeout(() => {
+                    console.log(`receipt ${result}`);
+                    parent.getUserController({ gas: 3091745 }, (err1, result1) => {
+                        if (err) console.log('err', err1);
+                        console.log(`Address ${result1}`);
+                    });
+                }, 10000);
+            });
+            fs.writeFileSync('../contractConfig.json', JSON.stringify({ address: res.address, abi: res.abi }), 'utf8');
+            // Let's test the deployed contract
+        }
+    });
 }
 
 async function getContract() {
@@ -39,10 +108,10 @@ async function getContract() {
         return deployedInstance;
     } */
     console.log('Start');
-    const input = fs.readFileSync('./../ownBlockchain/contracts/UserManagement.sol');// ('../ownBlockchain/contracts/UserManagement.sol');
+    const input = fs.readFileSync('./../ownBlockchain/contracts/UserController.sol');// ('../ownBlockchain/contracts/UserController.sol');
     const output = solc.compile(input.toString(), 1);
-    const { bytecode } = output.contracts[':UserManagement'];
-    const abi = JSON.parse(output.contracts[':UserManagement'].interface);
+    const { bytecode } = output.contracts[':UserController'];
+    const abi = JSON.parse(output.contracts[':UserController'].interface);
 
     const deployedContract = web3.eth.contract(abi);
     const deployedInstance = deployedContract.at('0xd21cc3a6bf14a1e9f25b76333f38738cafe0453c');
@@ -84,7 +153,24 @@ async function init() {
     // web3.eth.defaultAccount = web3.eth.coinbase;
     [web3.eth.defaultAccount] = web3.eth.accounts;
     web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 10000);
-    userManagement = await getContract();
+
+    /* const parent = */ await deployParent();/*
+    parent.createUserController({ gas: 47000 });
+    console.log(`Parent Address ${parent.getUserController({ gas: 47000 })}`); */
+    /*
+    setTimeout(() => {
+        const parentInstance = await deployParent();
+        console.log('​init -> parentAdress', parentAddress);
+        const newParentInstance = parentInstance.at(parentAddress);
+        const ucCreated = newParentInstance.createUserController(web3.toHex('1234567890'));
+        console.log('​deployParent -> ucCreated ', ucCreated);
+        if (ucCreated) {
+            const userControllerAddress = parentInstance.getUserController(web3.toHex('1234567890'));
+            console.log('​deployParent -> userController', userControllerAddress);
+            userController = parentInstance.at(userControllerAddress);
+            console.log(`Yo Yo new deployment ${userController.ready()}`);
+        }
+    }, 25000); */
 }
 
 app.use(bodyParser.urlencoded({
@@ -113,7 +199,7 @@ router
             // console.log('newContractInstance', newContractInstance, newContractInstance === contractInstance, contractInstance);
             web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 10000);
             const newUser = web3.toHex(req.body.email);
-            const returnVal = userManagement.insertUser(newUser, address, { gas: 47000 });
+            const returnVal = userController.insertUser(newUser, address, { gas: 47000 });
             console.log('New User: ', returnVal);
             if (returnVal) {
                 res.json({
@@ -168,8 +254,8 @@ router
     .route('/getuserdata/:email')
     .get((req, res) => {
         const user = web3.toHex(req.params.email);
-        const userConsumption = getUserConsumption(userManagement, user);
-        const overallConsumption = getOverallConsumption(userManagement);
+        const userConsumption = getUserConsumption(userController, user);
+        const overallConsumption = getOverallConsumption(userController);
         console.log('​user', user);
         return res.status(200).json({
             userConsumption,
@@ -201,7 +287,7 @@ router
         console.log('insertcoffee', req.body);
         const { size, strength } = getCoffeCode(req.body.size, req.body.strength);
         res.status(200).json({ coffee: getCoffeeString(size, strength) });
-        userManagement.insertCoffee(email, size, strength, { gas: 47000 });
+        userController.insertCoffee(email, size, strength, { gas: 47000 });
         /*
         if (inserted) {
             return res.status(200).json(getCoffeeString(size, strength));
@@ -218,11 +304,11 @@ router
         const token = jwt.sign(payload, app.get('superSecret'), {
             expiresIn: 60 * 60 * 24, // expires in 24 hours
         });
-        if (userManagement) {
+        if (userController) {
             web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 10000);
             const user = web3.toHex(req.body.email);
             console.log('​req.body.email', req.body.email, `user ${user}`);
-            const ethAddress = userManagement.getUser(user);
+            const ethAddress = userController.getUser(user);
             console.log('Email', req.body.email, 'ethAddress', ethAddress);
             const isUnlocked = web3.personal.unlockAccount(ethAddress, req.body.password, 1000000); // Use Geth API for unlocking the account
 
