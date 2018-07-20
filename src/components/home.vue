@@ -27,7 +27,7 @@
                   </form>
                 </li>
               </ul>
-              <b-button type='submit' style='width: 150px; margin-bottom: 50px;  background-color: #499324;'>Drink</b-button>
+              <b-button id="drinkSubmit" type='submit' style='width: 150px; margin-bottom: 50px;  background-color: #499324;'>Drink</b-button>
             </div>
           </form>
         </swiper-slide>
@@ -123,7 +123,10 @@ export default {
     createChart() {
       if (this.$store.getters.chartData) {
         const ctx = document.getElementById("myChart");
-        if (myDoughnutChart) {
+        if (false) {
+          const dataArrId = positionMapping.get(response.data.coffee);
+          console.log(" mySwiper.activeIndex", dataArrId);
+          this.$store.commit("updateChartData", dataArrId);
           myDoughnutChart.update();
         } else {
           myDoughnutChart = new Chart(ctx, {
@@ -146,24 +149,20 @@ export default {
       evt.preventDefault;
       console.log("drink");
       if (this.form.size && this.form.strength) {
-        console.log("form ", this.form);
         axios
-          .post(`http://192.168.188.95:3003/api/insertcoffee`, {
+          .post(`http://192.168.178.31:3003/api/insertcoffee`, {
             ...this.form,
             email: this.getUsername()
           })
           .then(response => {
             const dataArrId = positionMapping.get(response.data.coffee);
-            console.log(" mySwiper.activeIndex", mySwiper.activeIndex);
             this.$store.commit("updateChartData", dataArrId);
             myDoughnutChart.update();
-            var tmpSwiper = document.querySelector(".swiper-container").swiper;
+            const tmpSwiper = document.querySelector(".swiper-container").swiper;
 
-            // Now you can use all slider methods like
-            tmpSwiper.slideReset();
-            setTimeout(() => tmpSwiper.slideNext(700), 200);
+            //tmpSwiper.slideReset();
+            setTimeout(() => tmpSwiper.slideTo(1, 500), 200);
 
-            console.log(" mySwiper.activeIndex (2)", mySwiper.activeIndex);
             const inputArray = document.querySelectorAll("input");
             inputArray.forEach(input => (input.checked = false));
             const formArray = document.querySelectorAll(".buttonList");
@@ -177,7 +176,7 @@ export default {
   mounted() {
     console.log("mounted new slide");
     positionMapping = new Map(this.$store.getters.positionMapping);
-    this.createChart();
+    //this.createChart();
 
     mySwiper = new Swiper(".swiper-container", {
       grabCursor: false,
@@ -234,7 +233,7 @@ export default {
 
     axios
       .get(
-        `http://192.168.188.95:3003/api/getuserdata/${localStorage["email"]}`
+        `http://192.168.178.31:3003/api/getuserdata/${localStorage["email"]}`
       )
       .then(response => {
         console.log("​beforeCreate -> response ", response);
@@ -265,7 +264,7 @@ export default {
           this.$store.getters.positionMapping
         );
         positionMapping = new Map(this.$store.getters.positionMapping);
-        console.log("​mounted -> positionMapping", positionMapping);
+        console.log("​CHARTDATA", this.$store.getters.chartData.datasets[0].data);
         this.createChart();
       })
       .catch(e => {
@@ -333,6 +332,12 @@ export default {
   font-size: calc(14px + 0.5vw);
   padding: 5px 0px;
   display: block;
+}
+
+#drinkSubmit {
+  text-align: center;
+  font-size: calc(12px + 0.5vw);
+  padding: 5px 0px;
 }
 
 .buttonList label input {

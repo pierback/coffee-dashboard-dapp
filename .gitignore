@@ -79,10 +79,4 @@ typings/
 .next
 api/.node-xmlhttprequest-*
 
-UTC*
-
-ownBlockchain/privchain/*
-
-ownBlockchain/privchain/geth/chaindata/LOG
-ownBlockchain/privchain/geth/chaindata/CURRENT
 .DS_Store

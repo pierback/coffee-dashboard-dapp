@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "",
-  "proxy": "http://192.168.188.95:3002/",
+  "proxy": "http://192.168.178.31:3002/",
   "private": true,
   "scripts": {
-    "client": "webpack-dev-server --host 192.168.188.95 --port 3002 --inline --progress --config build/webpack.dev.conf.js",
+    "client": "webpack-dev-server --host 192.168.178.31 --port 3002 --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "bchain": "geth --port 3000 --networkid 58342 --nodiscover --datadir=./ownBlockchain/privchain --maxpeers=0  --rpc --rpcport 8545 --rpcaddr 127.0.0.1 --rpccorsdomain \"*\" --rpcapi \"eth,net,web3,personal,miner\"",
     "unit": "jest --config test/unit/jest.conf.js --coverage",

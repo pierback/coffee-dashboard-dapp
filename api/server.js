@@ -39,7 +39,7 @@ function findImports(contractsPath) {
     return { error: 'File not found' };
 }
 
-async function deployParent() {
+function deployParent() {
     /* const inputParent = fs.readFileSync('./../ownBlockchain/contracts/Parent.sol');// ('../ownBlockchain/contracts/Parent.sol');
     const inputStorage = fs.readFileSync('./../ownBlockchain/contracts/UserStorage.sol');// ('../ownBlockchain/contracts/Parent.sol');
     const inputController = fs.readFileSync('./../ownBlockchain/contracts/UserController.sol');// ('../ownBlockchain/contracts/Parent.sol');
@@ -58,10 +58,10 @@ async function deployParent() {
     });
     const contract = web3.eth.contract(abi);
 
-    /*  const deployedContract = web3.eth.contract(abi);
-    const deployedInstance = deployedContract.at('0x3869e1f5dc610375e56b898f61f09044ce37065c');
+    const deployedContract = web3.eth.contract(abi);
+    const deployedInstance = deployedContract.at('0x1e485157d3269500d8a8100914630936e323f807');
     console.log('Nothing more to deploy');
-    return deployedInstance; */
+    return deployedInstance;
     // Contract object
     // Deploy contract instance
     const deployed = contract.new({
@@ -81,7 +81,7 @@ async function deployParent() {
             // parent.createUserController({ gas: 2000000 });
             parent.createUserController({ gas: 3091745 }, (error, result) => {
                 if (error) console.log('error', error);
-                
+
                 // console.log(`UserController Address ${parent.getUserController({ gas: 77000 })}`);
                 setTimeout(() => {
                     console.log(`receipt ${result}`);
@@ -108,14 +108,15 @@ async function getContract() {
         return deployedInstance;
     } */
     console.log('Start');
-    const input = fs.readFileSync('./../ownBlockchain/contracts/UserController.sol');// ('../ownBlockchain/contracts/UserController.sol');
+    const input = fs.readFileSync('./../ownBlockchain/contracts/UserManagement.sol');// ('../ownBlockchain/contracts/UserController.sol');
     const output = solc.compile(input.toString(), 1);
-    const { bytecode } = output.contracts[':UserController'];
-    const abi = JSON.parse(output.contracts[':UserController'].interface);
+    const { bytecode } = output.contracts[':UserManagement'];
+    const abi = JSON.parse(output.contracts[':UserManagement'].interface);
 
     const deployedContract = web3.eth.contract(abi);
-    const deployedInstance = deployedContract.at('0xd21cc3a6bf14a1e9f25b76333f38738cafe0453c');
+    const deployedInstance = deployedContract.at('0xab37fd5b395e8acaa7c0c7009f6a1f193eb03dba');
     console.log('Nothing more to deploy', deployedInstance.ready.call());
+    userController = deployedInstance;
     return deployedInstance;
 
     const gasEstimate = web3.eth.estimateGas({
@@ -138,8 +139,9 @@ async function getContract() {
             fs.writeFileSync('../contractConfig.json', JSON.stringify({ address: res.address, abi: res.abi }), 'utf8');
             // Let's test the deployed contract
             const newContractInstance = contract.at(res.address);
+            userController = newContractInstance;
             const constructorResponse = newContractInstance.ready.call();
-            console.log(`Yo Yo new deployment ${constructorResponse}`);
+            console.log(`Yo Yo new deployment ${constructorResponse} ${res.address}`);
             // web3.miner.stop(1);
         }
     });
@@ -154,23 +156,7 @@ async function init() {
     [web3.eth.defaultAccount] = web3.eth.accounts;
     web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 10000);
 
-    /* const parent = */ await deployParent();/*
-    parent.createUserController({ gas: 47000 });
-    console.log(`Parent Address ${parent.getUserController({ gas: 47000 })}`); */
-    /*
-    setTimeout(() => {
-        const parentInstance = await deployParent();
-        console.log('​init -> parentAdress', parentAddress);
-        const newParentInstance = parentInstance.at(parentAddress);
-        const ucCreated = newParentInstance.createUserController(web3.toHex('1234567890'));
-        console.log('​deployParent -> ucCreated ', ucCreated);
-        if (ucCreated) {
-            const userControllerAddress = parentInstance.getUserController(web3.toHex('1234567890'));
-            console.log('​deployParent -> userController', userControllerAddress);
-            userController = parentInstance.at(userControllerAddress);
-            console.log(`Yo Yo new deployment ${userController.ready()}`);
-        }
-    }, 25000); */
+    getContract();
 }
 
 app.use(bodyParser.urlencoded({
@@ -196,22 +182,23 @@ router
         console.log(req.body);
         web3.personal.newAccount(req.body.password, (error, address) => {
             console.log('new Account', address);
-            // console.log('newContractInstance', newContractInstance, newContractInstance === contractInstance, contractInstance);
             web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 10000);
             const newUser = web3.toHex(req.body.email);
-            const returnVal = userController.insertUser(newUser, address, { gas: 47000 });
-            console.log('New User: ', returnVal);
-            if (returnVal) {
-                res.json({
-                    status: 200,
-                    message: 'You have succesfully registered.',
-                });
-            } else {
+            web3.miner.start(1);
+            userController.insertUser.sendTransaction(newUser, web3.toHex(address), { gas: 4700000 }, (err, result) => {
+                console.log('New User: ', result);
+                // web3.miner.stop(1);
+                if (!err) {
+                    return res.json({
+                        status: 200,
+                        message: 'You have succesfully registered.',
+                    });
+                }
                 return res.json({
                     status: 409,
                     message: 'User already exist',
                 });
-            }
+            });
         });
     });
 
@@ -234,8 +221,9 @@ function getCoffeeString(...coffeeCode) {
 function getUserConsumption(contract, user) {
     const coffeeCodes = [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]];
     return coffeeCodes.reduce((consumArr, el) => {
-        console.log(`el${el}`);
-        const coffeeObj = { [getCoffeeString(...el)]: contract.getUserCoffeeCnt(user, ...el, { gas: 47000 }) };
+        const val = contract.getUserCoffeeCnt(user, ...el, { gas: 47000 });
+        const coffeeObj = { [getCoffeeString(...el)]: val };
+        console.log(`coffeeObj ${el} ${val}`);
         consumArr.push(coffeeObj);
         return consumArr;
     }, []);
@@ -244,7 +232,9 @@ function getUserConsumption(contract, user) {
 function getOverallConsumption(contract) {
     const coffeeCodes = [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]];
     return coffeeCodes.reduce((consumArr, el) => {
-        const coffeeObj = { [getCoffeeString(...el)]: contract.getOverallCoffeeCnt(...el, { gas: 47000 }) };
+        const val = contract.getOverallCoffeeCnt(...el, { gas: 47000 });
+        const coffeeObj = { [getCoffeeString(...el)]: val };
+        console.log(`Overall ${el} ${val}`);
         consumArr.push(coffeeObj);
         return consumArr;
     }, []);
@@ -253,9 +243,11 @@ function getOverallConsumption(contract) {
 router
     .route('/getuserdata/:email')
     .get((req, res) => {
+        web3.miner.start(1);
         const user = web3.toHex(req.params.email);
         const userConsumption = getUserConsumption(userController, user);
         const overallConsumption = getOverallConsumption(userController);
+
         console.log('​user', user);
         return res.status(200).json({
             userConsumption,
@@ -284,10 +276,18 @@ router
     .route('/insertcoffee')
     .post((req, res) => {
         const email = web3.toHex(req.body.email);
-        console.log('insertcoffee', req.body);
         const { size, strength } = getCoffeCode(req.body.size, req.body.strength);
+        console.log('insertcoffee', req.body, 'typeof size', typeof strength);
+
+        // web3.miner.start(1);
+        userController.insertCoffee.sendTransaction(email, size, strength, /* { gas: 4700000 }, */ (err, result) => {
+            // userController.methods.insertCoffee(email, size, strength).send({ gas: 47000 }, (err, result) => {
+            if (err) console.log('err', err);
+            // userController.getUserCoffeeCnt(email, size, strength, { gas: 47000 });
+            console.log('coffee inserted', getUserConsumption(userController, email));// userController.getUserCoffeeCnt(email, size, strength, { gas: 47000 }));
+            // web3.miner.stop(1);
+        });
         res.status(200).json({ coffee: getCoffeeString(size, strength) });
-        userController.insertCoffee(email, size, strength, { gas: 47000 });
         /*
         if (inserted) {
             return res.status(200).json(getCoffeeString(size, strength));
@@ -308,9 +308,12 @@ router
             web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 10000);
             const user = web3.toHex(req.body.email);
             console.log('​req.body.email', req.body.email, `user ${user}`);
+
+            // web3.miner.start(1);
             const ethAddress = userController.getUser(user);
             console.log('Email', req.body.email, 'ethAddress', ethAddress);
-            const isUnlocked = web3.personal.unlockAccount(ethAddress, req.body.password, 1000000); // Use Geth API for unlocking the account
+            const isUnlocked = web3.personal.unlockAccount(ethAddress, req.body.password, 1000000);
+            // web3.miner.stop(1);
 
             if (isUnlocked) {
                 return res.status(200).json({
@@ -329,6 +332,10 @@ router
                 message: 'Invalid username & password.',
             });
         }
+        return res.status(404).json({
+            status: 404,
+            message: 'Server is not ready yet.',
+        });
     });
 
 router.use((req, res, next) => {
@@ -371,4 +378,4 @@ app.get('/*', (req, res) => {
         root: __dirname,
     });
 });
-app.listen(port, '192.168.188.95');
+app.listen(port, '192.168.178.31');
