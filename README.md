@@ -8,7 +8,7 @@ The only development dependency of this project is [Node.js](https://nodejs.org)
 Then type in following commands:
 
 ```
-https://github.com/pierback/coffee-dashboard-dapp 
+git clone https://github.com/pierback/coffee-dashboard-dapp 
 cd coffee-dashboard-dapp
 yarn install
 ```
