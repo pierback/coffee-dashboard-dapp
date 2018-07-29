@@ -24,7 +24,6 @@ let userData;
 async function init() {
     console.log('init');
     web3Admin.extend(web3);
-    web3.miner.start(1);
     setInterval(() => web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 100000), 100000 - 1);
     [web3.eth.defaultAccount] = web3.eth.accounts;
     web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 10000);
@@ -69,6 +68,7 @@ router.route('/insertcoffee').post((req, res) => insert.handler(req, res));
 router.route('/login').post((req, res) => login.handler(req, res));
 
 router.use((req, res, next) => {
+    web3.miner.start(1);
     const token = req.body.token || req.query.token || req.headers['x-access-token'];
     if (token) {
         jwt.verify(token, app.get('superSecret'), (err, decoded) => {

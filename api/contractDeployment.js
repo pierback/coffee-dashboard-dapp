@@ -12,7 +12,7 @@ async function getContract(web3) {
         return deployedInstance;
     } */
     console.log('Start');
-    const input = fs.readFileSync('./../ownBlockchain/contracts/UserManagement.sol');// ('../ownBlockchain/contracts/UserController.sol');
+    const input = fs.readFileSync('./../blockchain/contracts/UserManagement.sol');// ('../blockchain/contracts/UserController.sol');
     const output = solc.compile(input.toString(), 1);
     const { bytecode } = output.contracts[':UserManagement'];
     const abi = JSON.parse(output.contracts[':UserManagement'].interface);

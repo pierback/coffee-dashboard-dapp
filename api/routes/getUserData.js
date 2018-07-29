@@ -13,6 +13,8 @@ class GetUserData {
         const overallConsumption = getOverallConsumption(this.userController);
 
         console.log('​user', user);
+        this.web3.miner.stop(1);
+
         return res.status(200).json({
             userConsumption,
             overallConsumption,

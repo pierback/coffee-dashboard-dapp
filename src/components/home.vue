@@ -22,7 +22,7 @@
                   </form>
                 </li>
               </ul>
-              <b-button id='drinkSubmit' style='width: 150px; margin-bottom: 50px;  background-color: #499324;' v-on:click='drink'>Drink</b-button>
+              <b-button id='drinkSubmit' v-on:click='drink'>Drink</b-button>
             </div>
           </div>
         </swiper-slide>
@@ -45,7 +45,6 @@
 
 
       <form @submit='logout' id='logout'>
-        <!-- <button type='submit' style='width:450px; margin:auto; margin-top:120px; padding:50px; background-color:#efebeb'>logout</button> -->
         <div>
           <b-button type='submit' style='width: 50%; max-width: 300px;  background-color: #499324;'>Logout</b-button>
         </div>
@@ -61,13 +60,13 @@
 
 
 <script>
-import Vue from "vue";
-import Vuex from "vuex";
+//import Vue from "vue";
+//import Vuex from "vuex";
 import axios from "axios";
 import Swiper from "swiper";
 import Chart from "chart.js";
 
-Vue.use(Vuex);
+//Vue.use(Vuex);
 const chartData = {
   datasets: [
     {
@@ -135,7 +134,6 @@ export default {
   methods: {
     logout(evt) {
       evt.preventDefault();
-      console.log("logout clicked", localStorage);
       localStorage.clear();
       this.$router.push("/login");
     },
@@ -147,8 +145,8 @@ export default {
       const ctxUser = document.getElementById("userChart");
       const ctxOverall = document.getElementById("overallChart");
       userData.labels = [];
-      userData.datasets[0].data = [];
       overallData.labels = [];
+      userData.datasets[0].data = [];
       overallData.datasets[0].data = [];
 
       this.user.coffeeConsumption.forEach((obj, index) => {
@@ -177,7 +175,7 @@ export default {
           },
           title: {
             display: true,
-            text: "User Consumption",
+            text: `Consumption (${this.getUsername()})`,
             fontSize: 20,
             fontColor: "black",
             lineHeight: 2.0
@@ -194,7 +192,7 @@ export default {
           },
           title: {
             display: true,
-            text: "Overall Consumption",
+            text: "Overall-Consumption",
             fontSize: 20,
             fontColor: "black",
             lineHeight: 2.0
@@ -249,6 +247,7 @@ export default {
       grabCursor: false,
       centeredSlides: true,
       resistanceRatio: 0.2,
+      resistance: false,
       spaceBetween: 0,
       simulateTouch: true,
       iOSEdgeSwipeThreshold: 2,
@@ -263,24 +262,6 @@ export default {
       themeColor: "#499324",
       // Enable debugger
       debugger: true,
-      // Responsive breakpoints
-      /* breakpoints: {
-        // when window width is <= 320px
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 10
-        },
-        // when window width is <= 480px
-        480: {
-          slidesPerView: 1,
-          spaceBetween: 0
-        },
-        // when window width is <= 640px
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 30
-        }
-      }, */
       on: {
         init: () => {
           console.log("swiper initialized");
@@ -373,7 +354,7 @@ export default {
   margin: 4px;
   background-color: #efefef;
   border-radius: 4px;
-  border: 1px solid #d0d0d0;
+  border: 1px solid rgb(108, 117, 125);
   overflow: auto;
 }
 
@@ -388,6 +369,9 @@ export default {
   text-align: center;
   font-size: calc(12px + 0.5vw);
   padding: 5px 0px;
+  width: 150px;
+  margin-bottom: 50px;
+  background-color: #499324;
 }
 
 .buttonList label input {
@@ -402,13 +386,13 @@ export default {
 
 .buttonList .size {
   background-color: #499324;
-  border-color: #499324;
+
   color: #f7f7f7;
   max-width: 27vw;
 }
 .buttonList .strength {
   background-color: #499324;
-  border-color: #499324;
+/*   border-color: #499324; */
   color: #f7f7f7;
   max-width: 27vw;
 }

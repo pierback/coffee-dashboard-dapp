@@ -99,215 +99,215 @@
 11:10:33.100746 db@janitor F·4 G·0
 11:10:33.100829 db@open done T·36.296561ms
 11:21:23.268552 table@compaction L0·1 -> L1·1 S·966KiB Q·23446
-11:21:23.270537 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000024.ldb: no such file or directory"
+11:21:23.270537 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000024.ldb: no such file or directory"
 11:21:24.271409 table@build retrying N·1
-11:21:24.271574 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000025.ldb: no such file or directory"
+11:21:24.271574 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000025.ldb: no such file or directory"
 11:21:32.271740 table@build retrying N·2
-11:21:32.271957 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000026.ldb: no such file or directory"
+11:21:32.271957 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000026.ldb: no such file or directory"
 11:21:40.273037 table@build retrying N·3
-11:21:40.273199 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000027.ldb: no such file or directory"
+11:21:40.273199 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000027.ldb: no such file or directory"
 11:21:48.274035 table@build retrying N·4
-11:21:48.274229 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000028.ldb: no such file or directory"
+11:21:48.274229 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000028.ldb: no such file or directory"
 11:21:56.274863 table@build retrying N·5
-11:21:56.275063 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000029.ldb: no such file or directory"
+11:21:56.275063 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000029.ldb: no such file or directory"
 11:22:04.278197 table@build retrying N·6
-11:22:04.278415 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000030.ldb: no such file or directory"
+11:22:04.278415 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000030.ldb: no such file or directory"
 11:22:12.280433 table@build retrying N·7
-11:22:12.280613 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000031.ldb: no such file or directory"
+11:22:12.280613 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000031.ldb: no such file or directory"
 11:22:20.281217 table@build retrying N·8
-11:22:20.281463 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000032.ldb: no such file or directory"
+11:22:20.281463 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000032.ldb: no such file or directory"
 11:22:28.286081 table@build retrying N·9
-11:22:28.286274 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000033.ldb: no such file or directory"
+11:22:28.286274 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000033.ldb: no such file or directory"
 11:22:36.287564 table@build retrying N·10
-11:22:36.289277 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000034.ldb: no such file or directory"
+11:22:36.289277 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000034.ldb: no such file or directory"
 11:22:44.289515 table@build retrying N·11
-11:22:44.289669 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000035.ldb: no such file or directory"
+11:22:44.289669 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000035.ldb: no such file or directory"
 11:22:52.289881 table@build retrying N·12
-11:22:52.290095 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000036.ldb: no such file or directory"
+11:22:52.290095 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000036.ldb: no such file or directory"
 11:23:00.290351 table@build retrying N·13
-11:23:00.290538 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000037.ldb: no such file or directory"
+11:23:00.290538 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000037.ldb: no such file or directory"
 11:23:08.291446 table@build retrying N·14
-11:23:08.291631 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000038.ldb: no such file or directory"
+11:23:08.291631 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000038.ldb: no such file or directory"
 11:23:16.292087 table@build retrying N·15
-11:23:16.293773 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000039.ldb: no such file or directory"
+11:23:16.293773 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000039.ldb: no such file or directory"
 11:23:24.294091 table@build retrying N·16
-11:23:24.294247 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000040.ldb: no such file or directory"
+11:23:24.294247 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000040.ldb: no such file or directory"
 11:23:32.295560 table@build retrying N·17
-11:23:32.295757 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000041.ldb: no such file or directory"
+11:23:32.295757 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000041.ldb: no such file or directory"
 11:23:40.298514 table@build retrying N·18
-11:23:40.298732 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000042.ldb: no such file or directory"
+11:23:40.298732 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000042.ldb: no such file or directory"
 11:23:48.301119 table@build retrying N·19
-11:23:48.301317 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000043.ldb: no such file or directory"
+11:23:48.301317 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000043.ldb: no such file or directory"
 11:23:56.304916 table@build retrying N·20
-11:23:56.305075 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000044.ldb: no such file or directory"
+11:23:56.305075 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000044.ldb: no such file or directory"
 11:24:04.308933 table@build retrying N·21
-11:24:04.309203 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000045.ldb: no such file or directory"
+11:24:04.309203 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000045.ldb: no such file or directory"
 11:24:12.309717 table@build retrying N·22
-11:24:12.309861 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000046.ldb: no such file or directory"
+11:24:12.309861 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000046.ldb: no such file or directory"
 11:24:20.313556 table@build retrying N·23
-11:24:20.313746 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000047.ldb: no such file or directory"
+11:24:20.313746 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000047.ldb: no such file or directory"
 11:24:28.314214 table@build retrying N·24
-11:24:28.314677 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000048.ldb: no such file or directory"
+11:24:28.314677 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000048.ldb: no such file or directory"
 11:24:36.315048 table@build retrying N·25
-11:24:36.315232 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000049.ldb: no such file or directory"
+11:24:36.315232 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000049.ldb: no such file or directory"
 11:24:44.319709 table@build retrying N·26
-11:24:44.319928 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000050.ldb: no such file or directory"
+11:24:44.319928 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000050.ldb: no such file or directory"
 11:24:52.324900 table@build retrying N·27
-11:24:52.325045 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000051.ldb: no such file or directory"
+11:24:52.325045 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000051.ldb: no such file or directory"
 11:25:00.327062 table@build retrying N·28
-11:25:00.327286 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000052.ldb: no such file or directory"
+11:25:00.327286 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000052.ldb: no such file or directory"
 11:25:08.331568 table@build retrying N·29
-11:25:08.331747 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000053.ldb: no such file or directory"
+11:25:08.331747 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000053.ldb: no such file or directory"
 11:25:16.334165 table@build retrying N·30
-11:25:16.334387 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000054.ldb: no such file or directory"
+11:25:16.334387 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000054.ldb: no such file or directory"
 11:25:24.335416 table@build retrying N·31
-11:25:24.335629 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000055.ldb: no such file or directory"
+11:25:24.335629 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000055.ldb: no such file or directory"
 11:25:32.336448 table@build retrying N·32
-11:25:32.336618 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000056.ldb: no such file or directory"
+11:25:32.336618 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000056.ldb: no such file or directory"
 11:25:40.338051 table@build retrying N·33
-11:25:40.338217 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000057.ldb: no such file or directory"
+11:25:40.338217 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000057.ldb: no such file or directory"
 11:25:48.338424 table@build retrying N·34
-11:25:48.338626 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000058.ldb: no such file or directory"
+11:25:48.338626 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000058.ldb: no such file or directory"
 11:25:56.343799 table@build retrying N·35
-11:25:56.343985 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000059.ldb: no such file or directory"
+11:25:56.343985 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000059.ldb: no such file or directory"
 11:26:04.344830 table@build retrying N·36
-11:26:04.345008 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000060.ldb: no such file or directory"
+11:26:04.345008 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000060.ldb: no such file or directory"
 11:26:12.348931 table@build retrying N·37
-11:26:12.349106 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000061.ldb: no such file or directory"
+11:26:12.349106 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000061.ldb: no such file or directory"
 11:26:20.349333 table@build retrying N·38
-11:26:20.349505 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000062.ldb: no such file or directory"
+11:26:20.349505 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000062.ldb: no such file or directory"
 11:26:28.351219 table@build retrying N·39
-11:26:28.351412 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000063.ldb: no such file or directory"
+11:26:28.351412 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000063.ldb: no such file or directory"
 11:26:36.351935 table@build retrying N·40
-11:26:36.352167 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000064.ldb: no such file or directory"
+11:26:36.352167 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000064.ldb: no such file or directory"
 11:26:44.357354 table@build retrying N·41
-11:26:44.357546 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000065.ldb: no such file or directory"
+11:26:44.357546 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000065.ldb: no such file or directory"
 11:26:52.360019 table@build retrying N·42
-11:26:52.360236 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000066.ldb: no such file or directory"
+11:26:52.360236 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000066.ldb: no such file or directory"
 11:27:00.365434 table@build retrying N·43
-11:27:00.365643 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000067.ldb: no such file or directory"
+11:27:00.365643 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000067.ldb: no such file or directory"
 11:27:08.369923 table@build retrying N·44
-11:27:08.370092 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000068.ldb: no such file or directory"
+11:27:08.370092 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000068.ldb: no such file or directory"
 11:27:16.371154 table@build retrying N·45
-11:27:16.371334 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000069.ldb: no such file or directory"
+11:27:16.371334 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000069.ldb: no such file or directory"
 11:27:24.371565 table@build retrying N·46
-11:27:24.371742 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000070.ldb: no such file or directory"
+11:27:24.371742 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000070.ldb: no such file or directory"
 11:27:32.375344 table@build retrying N·47
-11:27:32.375518 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000071.ldb: no such file or directory"
+11:27:32.375518 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000071.ldb: no such file or directory"
 11:27:40.378908 table@build retrying N·48
-11:27:40.379085 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000072.ldb: no such file or directory"
+11:27:40.379085 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000072.ldb: no such file or directory"
 11:27:48.383184 table@build retrying N·49
-11:27:48.383394 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000073.ldb: no such file or directory"
+11:27:48.383394 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000073.ldb: no such file or directory"
 11:27:56.386325 table@build retrying N·50
-11:27:56.386505 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000074.ldb: no such file or directory"
+11:27:56.386505 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000074.ldb: no such file or directory"
 11:28:04.389768 table@build retrying N·51
-11:28:04.389928 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000075.ldb: no such file or directory"
+11:28:04.389928 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000075.ldb: no such file or directory"
 11:28:12.390845 table@build retrying N·52
-11:28:12.391035 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000076.ldb: no such file or directory"
+11:28:12.391035 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000076.ldb: no such file or directory"
 11:28:20.392522 table@build retrying N·53
-11:28:20.392738 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000077.ldb: no such file or directory"
+11:28:20.392738 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000077.ldb: no such file or directory"
 11:28:28.397483 table@build retrying N·54
-11:28:28.397679 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000078.ldb: no such file or directory"
+11:28:28.397679 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000078.ldb: no such file or directory"
 11:28:36.398047 table@build retrying N·55
-11:28:36.398257 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000079.ldb: no such file or directory"
+11:28:36.398257 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000079.ldb: no such file or directory"
 11:28:44.402489 table@build retrying N·56
-11:28:44.402681 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000080.ldb: no such file or directory"
+11:28:44.402681 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000080.ldb: no such file or directory"
 11:28:52.407838 table@build retrying N·57
-11:28:52.407975 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000081.ldb: no such file or directory"
+11:28:52.407975 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000081.ldb: no such file or directory"
 11:29:00.408155 table@build retrying N·58
-11:29:00.408365 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000082.ldb: no such file or directory"
+11:29:00.408365 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000082.ldb: no such file or directory"
 11:29:08.408608 table@build retrying N·59
-11:29:08.408766 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000083.ldb: no such file or directory"
+11:29:08.408766 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000083.ldb: no such file or directory"
 11:29:16.409414 table@build retrying N·60
-11:29:16.409626 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000084.ldb: no such file or directory"
+11:29:16.409626 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000084.ldb: no such file or directory"
 11:29:24.410364 table@build retrying N·61
-11:29:24.410549 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000085.ldb: no such file or directory"
+11:29:24.410549 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000085.ldb: no such file or directory"
 11:29:32.411182 table@build retrying N·62
-11:29:32.411376 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000086.ldb: no such file or directory"
+11:29:32.411376 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000086.ldb: no such file or directory"
 11:29:40.412585 table@build retrying N·63
-11:29:40.412771 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000087.ldb: no such file or directory"
+11:29:40.412771 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000087.ldb: no such file or directory"
 11:29:48.419870 table@build retrying N·64
-11:29:48.420028 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000088.ldb: no such file or directory"
+11:29:48.420028 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000088.ldb: no such file or directory"
 11:29:56.420659 table@build retrying N·65
-11:29:56.420844 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000089.ldb: no such file or directory"
+11:29:56.420844 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000089.ldb: no such file or directory"
 11:30:04.421143 table@build retrying N·66
-11:30:04.421324 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000090.ldb: no such file or directory"
+11:30:04.421324 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000090.ldb: no such file or directory"
 11:30:12.421734 table@build retrying N·67
-11:30:12.421958 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000091.ldb: no such file or directory"
+11:30:12.421958 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000091.ldb: no such file or directory"
 11:30:20.422370 table@build retrying N·68
-11:30:20.422561 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000092.ldb: no such file or directory"
+11:30:20.422561 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000092.ldb: no such file or directory"
 11:30:28.423338 table@build retrying N·69
-11:30:28.423523 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000093.ldb: no such file or directory"
+11:30:28.423523 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000093.ldb: no such file or directory"
 11:30:36.427033 table@build retrying N·70
-11:30:36.427205 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000094.ldb: no such file or directory"
+11:30:36.427205 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000094.ldb: no such file or directory"
 11:30:44.428598 table@build retrying N·71
-11:30:44.428784 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000095.ldb: no such file or directory"
+11:30:44.428784 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000095.ldb: no such file or directory"
 11:30:52.437939 table@build retrying N·72
-11:30:52.438115 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000096.ldb: no such file or directory"
+11:30:52.438115 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000096.ldb: no such file or directory"
 11:31:00.445922 table@build retrying N·73
-11:31:00.446134 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000097.ldb: no such file or directory"
+11:31:00.446134 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000097.ldb: no such file or directory"
 11:31:08.448490 table@build retrying N·74
-11:31:08.448667 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000098.ldb: no such file or directory"
+11:31:08.448667 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000098.ldb: no such file or directory"
 11:31:16.458595 table@build retrying N·75
-11:31:16.458860 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000099.ldb: no such file or directory"
+11:31:16.458860 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000099.ldb: no such file or directory"
 11:31:24.461236 table@build retrying N·76
-11:31:24.461449 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000100.ldb: no such file or directory"
+11:31:24.461449 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000100.ldb: no such file or directory"
 11:31:32.467044 table@build retrying N·77
-11:31:32.467278 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000101.ldb: no such file or directory"
+11:31:32.467278 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000101.ldb: no such file or directory"
 11:31:40.474393 table@build retrying N·78
-11:31:40.474577 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000102.ldb: no such file or directory"
+11:31:40.474577 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000102.ldb: no such file or directory"
 11:31:48.478941 table@build retrying N·79
-11:31:48.479124 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000103.ldb: no such file or directory"
+11:31:48.479124 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000103.ldb: no such file or directory"
 11:31:56.479474 table@build retrying N·80
-11:31:56.479687 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000104.ldb: no such file or directory"
+11:31:56.479687 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000104.ldb: no such file or directory"
 11:32:04.480314 table@build retrying N·81
-11:32:04.480538 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000105.ldb: no such file or directory"
+11:32:04.480538 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000105.ldb: no such file or directory"
 11:32:12.481132 table@build retrying N·82
-11:32:12.481341 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000106.ldb: no such file or directory"
+11:32:12.481341 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000106.ldb: no such file or directory"
 11:32:20.482384 table@build retrying N·83
-11:32:20.482614 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000107.ldb: no such file or directory"
+11:32:20.482614 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000107.ldb: no such file or directory"
 11:32:28.485904 table@build retrying N·84
-11:32:28.486109 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000108.ldb: no such file or directory"
+11:32:28.486109 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000108.ldb: no such file or directory"
 11:32:36.495467 table@build retrying N·85
-11:32:36.495660 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000109.ldb: no such file or directory"
+11:32:36.495660 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000109.ldb: no such file or directory"
 11:32:44.496979 table@build retrying N·86
-11:32:44.497193 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000110.ldb: no such file or directory"
+11:32:44.497193 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000110.ldb: no such file or directory"
 11:32:52.502946 table@build retrying N·87
-11:32:52.503180 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000111.ldb: no such file or directory"
+11:32:52.503180 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000111.ldb: no such file or directory"
 11:33:00.503466 table@build retrying N·88
-11:33:00.503654 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000112.ldb: no such file or directory"
+11:33:00.503654 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000112.ldb: no such file or directory"
 11:33:08.505152 table@build retrying N·89
-11:33:08.505373 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000113.ldb: no such file or directory"
+11:33:08.505373 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000113.ldb: no such file or directory"
 11:33:16.514158 table@build retrying N·90
-11:33:16.514363 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000114.ldb: no such file or directory"
+11:33:16.514363 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000114.ldb: no such file or directory"
 11:33:24.517284 table@build retrying N·91
-11:33:24.517582 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000115.ldb: no such file or directory"
+11:33:24.517582 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000115.ldb: no such file or directory"
 11:33:32.518106 table@build retrying N·92
-11:33:32.518297 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000116.ldb: no such file or directory"
+11:33:32.518297 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000116.ldb: no such file or directory"
 11:33:40.519736 table@build retrying N·93
-11:33:40.519941 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000117.ldb: no such file or directory"
+11:33:40.519941 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000117.ldb: no such file or directory"
 11:33:48.521359 table@build retrying N·94
-11:33:48.521543 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000118.ldb: no such file or directory"
+11:33:48.521543 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000118.ldb: no such file or directory"
 11:33:56.523371 table@build retrying N·95
-11:33:56.523793 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000119.ldb: no such file or directory"
+11:33:56.523793 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000119.ldb: no such file or directory"
 11:34:04.525787 table@build retrying N·96
-11:34:04.525953 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000120.ldb: no such file or directory"
+11:34:04.525953 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000120.ldb: no such file or directory"
 11:34:12.529286 table@build retrying N·97
-11:34:12.529502 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000121.ldb: no such file or directory"
+11:34:12.529502 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000121.ldb: no such file or directory"
 11:34:20.536938 table@build retrying N·98
-11:34:20.537148 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000122.ldb: no such file or directory"
+11:34:20.537148 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000122.ldb: no such file or directory"
 11:34:28.546546 table@build retrying N·99
-11:34:28.546703 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000123.ldb: no such file or directory"
+11:34:28.546703 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000123.ldb: no such file or directory"
 11:34:36.552406 table@build retrying N·100
-11:34:36.552585 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000124.ldb: no such file or directory"
+11:34:36.552585 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000124.ldb: no such file or directory"
 11:34:44.555988 table@build retrying N·101
-11:34:44.556194 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000125.ldb: no such file or directory"
+11:34:44.556194 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000125.ldb: no such file or directory"
 11:34:52.561305 table@build retrying N·102
-11:34:52.561705 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000126.ldb: no such file or directory"
+11:34:52.561705 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000126.ldb: no such file or directory"
 11:35:00.562741 table@build retrying N·103
-11:35:00.562894 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000127.ldb: no such file or directory"
+11:35:00.562894 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000127.ldb: no such file or directory"
 11:35:08.563177 table@build retrying N·104
-11:35:08.563350 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/ownBlockchain/privchain/geth/chaindata/000128.ldb: no such file or directory"
+11:35:08.563350 table@build error I·1 "open /Users/fabianpieringer/Projects/coffee-dashboard-dapp/api/blockchain/privchain/geth/chaindata/000128.ldb: no such file or directory"
 11:35:16.325375 db@close closing
 11:35:16.325459 table@build exiting
 11:35:16.325705 db@close done T·328.789µs
@@ -1835,3 +1835,67 @@
 16:46:26.439495 table@remove removed @418
 16:46:26.439818 table@remove removed @419
 16:46:26.440939 table@remove removed @420
+19:09:08.498991 db@close closing
+19:09:08.499500 db@close done T·506.585µs
+=============== Jul 29, 2018 (CEST) ===============
+19:44:00.739373 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+19:44:00.739933 version@stat F·[0 6] S·11MiB[0B 11MiB] Sc·[0.00 0.11]
+19:44:00.739963 db@open opening
+19:44:00.740045 journal@recovery F·1
+19:44:00.744223 journal@recovery recovering @422
+19:44:00.763352 memdb@flush created L0@430 N·6094 S·320KiB "\x11\xf9\xd0..w\xa9\xb9,v295895":"\xfao\xb1..\xc2\\\x98,v295907"
+19:44:00.767385 version@stat F·[1 6] S·11MiB[320KiB 11MiB] Sc·[0.25 0.11]
+19:44:00.769803 db@janitor F·9 G·0
+19:44:00.769879 db@open done T·29.888221ms
+19:58:18.870121 table@compaction L0·1 -> L1·6 S·11MiB Q·296162
+19:58:18.945452 table@build created L1@433 N·52021 S·2MiB "\x00\x18\x9e..\xab,O,v73541":"b\x00\x00..\x81?G,v74508"
+19:58:18.995208 table@build created L1@434 N·36195 S·2MiB "b\x00\x00..W\xc9I,v97052":"h\x00\x00..\xc9\f|,v39928"
+19:58:19.052274 table@build created L1@435 N·26023 S·2MiB "h\x00\x00..\f|t,v39925":"h\x00\x00..\xfa\xf8\xde,v140515"
+19:58:19.109814 table@build created L1@436 N·25025 S·2MiB "h\x00\x00..\xf8\xdet,v140512":"h\x00\x00..\x1c\xebD,v222313"
+19:58:19.174648 table@build created L1@437 N·31391 S·2MiB "h\x00\x00..\xebDt,v222310":"r\x00\x00..I\x8f\xc1,v146959"
+19:58:19.210173 table@build created L1@438 N·18377 S·1MiB "r\x00\x00..ة\x1e,v146968":"\xff\xee\x87..m/\xd6,v57693"
+19:58:19.210293 version@stat F·[0 6] S·11MiB[0B 11MiB] Sc·[0.00 0.11]
+19:58:19.210854 table@compaction committed F-1 S-84KiB Ke·0 D·2412 T·340.606846ms
+19:58:19.211138 table@remove removed @430
+19:58:19.211773 table@remove removed @424
+19:58:19.212184 table@remove removed @425
+19:58:19.212551 table@remove removed @426
+19:58:19.212952 table@remove removed @427
+19:58:19.213528 table@remove removed @428
+19:58:19.213763 table@remove removed @429
+21:03:23.698404 db@close closing
+21:03:23.698999 db@close done T·591.908µs
+=============== Jul 29, 2018 (CEST) ===============
+21:03:28.527240 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:03:28.527740 version@stat F·[0 6] S·11MiB[0B 11MiB] Sc·[0.00 0.11]
+21:03:28.527774 db@open opening
+21:03:28.527851 journal@recovery F·1
+21:03:28.532214 journal@recovery recovering @431
+21:03:28.535272 memdb@flush created L0@439 N·929 S·51KiB "%\xb5K..\xfc\x12\x13,v296837":"\xfaa\v..g\x10=,v296829"
+21:03:28.541116 version@stat F·[1 6] S·11MiB[51KiB 11MiB] Sc·[0.25 0.11]
+21:03:28.543549 db@janitor F·9 G·0
+21:03:28.543976 db@open done T·16.081456ms
+21:31:12.597753 db@close closing
+21:31:12.597985 db@close done T·231.011µs
+=============== Jul 29, 2018 (CEST) ===============
+21:31:55.518303 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:31:55.518993 version@stat F·[1 6] S·11MiB[51KiB 11MiB] Sc·[0.25 0.11]
+21:31:55.519060 db@open opening
+21:31:55.519234 journal@recovery F·1
+21:31:55.526946 journal@recovery recovering @440
+21:31:55.528499 memdb@flush created L0@442 N·2 S·240B "Dat..ion,v296839":"Las..der,v296840"
+21:31:55.534291 version@stat F·[2 6] S·11MiB[51KiB 11MiB] Sc·[0.50 0.11]
+21:31:55.537549 db@janitor F·10 G·0
+21:31:55.537628 db@open done T·18.534452ms
+                                                                                                                                                                                                                                                                                                                           21:45:59.671695 db@close closing
+21:45:59.679274 db@close done T·7.573464ms
+=============== Jul 29, 2018 (CEST) ===============
+21:47:15.921209 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:47:15.921440 version@stat F·[2 6] S·11MiB[51KiB 11MiB] Sc·[0.50 0.11]
+21:47:15.921466 db@open opening
+21:47:15.921543 journal@recovery F·1
+21:47:15.925076 journal@recovery recovering @443
+21:47:15.925847 memdb@flush created L0@445 N·2 S·240B "Dat..ion,v296842":"Las..der,v296843"
+21:47:15.930467 version@stat F·[3 6] S·11MiB[51KiB 11MiB] Sc·[0.75 0.11]
+21:47:15.931727 db@janitor F·11 G·0
+21:47:15.931807 db@open done T·10.298758ms

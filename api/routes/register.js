@@ -11,11 +11,10 @@ class Register {
             this.web3.personal.unlockAccount(this.web3.eth.accounts[0], '0000', 10000);
             const newUser = this.web3.toHex(req.body.email);
 
-            this.web3.miner.start(1);
-
             this.userController.insertUser.sendTransaction(newUser, this.web3.toHex(address), { gas: 4700000 }, (err, result) => {
                 console.log('New User: ', result);
                 // this.web3.miner.stop(1);
+
                 if (!err) {
                     return res.json({
                         status: 200,

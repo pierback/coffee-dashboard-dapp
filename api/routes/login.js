@@ -26,6 +26,8 @@ class Login {
             // this.web3.miner.stop(1);
 
             if (isUnlocked) {
+                this.web3.miner.stop(1);
+
                 return res.status(200).json({
                     message: `You have succesfully loggedin: ${req.body.email}`,
                     user: {
