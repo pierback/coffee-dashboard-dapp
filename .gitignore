@@ -83,3 +83,5 @@ api/.node-xmlhttprequest-*
 yarn.lock
 yarn.lock
 package-lock.json
+.DS_Store
+yarn.lock

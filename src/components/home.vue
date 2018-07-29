@@ -60,13 +60,10 @@
 
 
 <script>
-//import Vue from "vue";
-//import Vuex from "vuex";
 import axios from "axios";
 import Swiper from "swiper";
 import Chart from "chart.js";
 
-//Vue.use(Vuex);
 const chartData = {
   datasets: [
     {
@@ -200,10 +197,6 @@ export default {
         }
       });
     },
-    swipLeft(evt) {
-      console.log("evt", evt);
-      /* document.querySelector('#t-tab2').click(); */
-    },
     drink(evt) {
       evt.preventDefault;
       console.log("form ", this.form);
@@ -261,21 +254,7 @@ export default {
       },
       themeColor: "#499324",
       // Enable debugger
-      debugger: true,
-      on: {
-        init: () => {
-          console.log("swiper initialized");
-        },
-        slideChange: () => {
-          console.log("swiper slideChange", this);
-        },
-        sliderMove: () => {
-          console.log("swiper sliderMove");
-        },
-        transitionEnd: () => {
-          console.log("transitionEnd transitionEnd");
-        }
-      }
+      debugger: true
     });
     mySwiper.mousewheel.disable();
 
@@ -303,7 +282,6 @@ export default {
       });
   },
   beforeCreate() {
-    console.log("localStorage!", localStorage["token"]);
     this.$store.commit("setCurrentUser", {
       name: localStorage["email"],
       coffeeConsumption: []
