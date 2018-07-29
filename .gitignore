@@ -80,3 +80,6 @@ typings/
 api/.node-xmlhttprequest-*
 
 .DS_Store
+yarn.lock
+yarn.lock
+package-lock.json

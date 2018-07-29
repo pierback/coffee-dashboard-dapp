@@ -7,22 +7,7 @@ import App from './App'
 import router from './router'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-vue/dist/bootstrap-vue.css"
-
-import VueTabs from 'vue-nav-tabs'
-import 'vue-nav-tabs/themes/vue-tabs.css'
-//import VueTouch from 'vue-touch';
-/* import VSwipe from 'vswipe'
-Vue.use(VSwipe) */
-
-//Vue.use(VueTouch);
-Vue.use(VueTabs)
-
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import RingLoader from 'vue-spinner/src/RingLoader.vue'
-import Swiper from "swiper";
-import Chart from 'chart.js';
-
-// require styles
 import 'swiper/dist/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
@@ -104,7 +89,7 @@ new Vue({
   router,
   store,
   template: '<App/>',
-  components: { App, RingLoader }
+  components: { App }
 })
 
 

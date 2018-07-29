@@ -13,9 +13,10 @@
       "error",
       4
     ],
+    "class-methods-use-this": "off",
     "linebreak-style": [
-      "error",
-      "windows"
+      "off",
+      "unix"
     ],
     "quotes": [
       "error",
