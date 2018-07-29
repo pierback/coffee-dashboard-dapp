@@ -37,5 +37,4 @@ If the execution sequence is switched, the DApp won't be able to connect to the 
 ./src contains the whole frontend, which is based on vue-components
 ./blockchain contains the genesis ethereum blockchain
 ./api contains the backend based on node.js & express
-
 ```
