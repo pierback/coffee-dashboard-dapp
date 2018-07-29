@@ -44,7 +44,7 @@ contract UserManagement {
         return overallConsumption[coffee];
     }
 
-    function insertCoffee(bytes32 _email, CoffeeSize _size, CoffeeStrength _strength) public payable{
+    function insertCoffee(bytes32 _email, CoffeeSize _size, CoffeeStrength _strength) public payable {
         uint8 coffee = getCoffeeCode(uint8(_size),uint8(_strength));
         users[_email].consumption[coffee] = getUserCoffeeCnt(_email, _size, _strength) + 1; 
         overallConsumption[coffee] = getOverallCoffeeCnt(_size, _strength) + 1;

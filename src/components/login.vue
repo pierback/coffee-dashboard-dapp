@@ -1,69 +1,32 @@
 
 <template>
-<!--  <div>
-     <b-form @submit="onSubmit" style="width:450px; margin:auto; margin-top:120px; padding:50px; background-color:#efebeb">
-    <h1 style="text-align:center; margin-bottom:20px">L☕️gin</h1>
-      <b-form-group id="exampleInputGroup1">
-        <b-form-input id="exampleInput1"
-                      type="text" v-model="form.email" required
-                      placeholder="Email"
-        ></b-form-input>
-      </b-form-group>
-      <b-form-group id="exampleInputGroup2">
-        <b-form-input id="exampleInput2"
-                      type="password" v-model="form.password" required
-                      placeholder="Password"
-        ></b-form-input>
-      </b-form-group>
 
-    
-      <b-form-group id="exampleGroup4">
-        <b-form-checkbox v-model="form.checked" id="exampleInput4">
-          Check me out
-        </b-form-checkbox>
-        <router-link to="signup" style="float:right">signup?</router-link>
-      </b-form-group>
-      <b-button type="submit" variant="primary" style="width:50%">Submit</b-button>
-      <b-button type="reset" variant="secondary" style="width:48%">Reset</b-button>
-    </b-form>
-    <div>{{ axiosResponse }}</div>
-  </div> -->
-
-  <div class="login-page">
-  <div class="form">
-
-    <form class="login-form" v-autofill-catch name="login" v-on:submit.prevent="login([form.email, form.password])">
-      <input v-model="form.email" required type="text" name="email" placeholder="Email Address">
-      <input v-model="form.password" required  type="password" placeholder="Password">
-      <button type="submit">Login!</button>
-      <p class="message">Not registered? <a href="/#/signup">Create an account</a></p>
+  <div class='login-page'>
+  <div class='form'>
+    <form class='login-form' v-autofill-catch name='login' v-on:submit.prevent='login([form.email, form.password])'>
+      <input v-model='form.email' required type='text' name='email' placeholder='Email Address'>
+      <input v-model='form.password' required  type='password' placeholder='Password'>
+      <!-- <div style="width: 100%"><input v-model='form.email' required type='text' name='email' placeholder='Email Address'><p class='loginFailed'>❌</p></div>
+      <div><input v-model='form.password' required  type='password' placeholder='Password'><p class='loginFailed'>❌</p></div> -->
+      <button type='submit'>Login!</button>
+      <p class='message'>Not registered? <a href='/signup'>Create an account</a></p>
 	  </form>
-
-    <!-- <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form> -->
-    <!-- <form class="login-form" @submit='onSubmit'>
-      <input type="text" v-model="form.email" placeholder="username"/>
-      <input type="password" v-model="form.password" placeholder="password"/>
-      <button type="submit">login</button>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
-    </form> -->
-  </div> 
-<div>{{ axiosResponse }}</div>
+  </div>
+  <!-- <ring-loader :loading="this.loading" :color="this.color" :size="this.size"></ring-loader> -->
+  <!-- <b-modal id="modalsm" class="lds-ripple" style="text-align:center" ref="modal" size="sm" hide-footer>
+        <div></div><div></div>
+  </b-modal> -->
+  <div id='overlay'>
+  <div class="lds-ripple"><div></div><div></div></div>
+  </div>
 </div>
-
 </template>
 
 <script>
 import axios from "axios";
 import Vue from "vue";
 import Vuex from "vuex";
-/* const VueResource = require("vue-resource");
-Vue.use(VueResource); */
+
 Vue.use(Vuex);
 
 import autofillCatch from "../directives/autofill-catch.js";
@@ -76,43 +39,47 @@ export default {
         email: "",
         password: ""
       },
-      axiosResponse: ""
+      color: "#3AB982",
+      height: "35px",
+      width: "4px",
+      margin: "2px",
+      radius: "2px"
     };
   },
   methods: {
     login(...args) {
-      console.log('​login -> args', args);
-      console.log("​onSubmit -> this.form", this.form);
       this.axiosResponse = this.form;
+      const inputElements = document.querySelectorAll("input");
+      const loginButton = document.querySelectorAll("button");
+      const overlay = document.getElementById("overlay");
+      overlay.style.display = "block";
+      loginButton.disabled = true;
+      inputElements.forEach(input => (input.disabled = true));
 
       axios
-        .post(`http://192.168.178.31:3003/api/login`, this.form)
+        .post(`http://192.168.188.95:3003/api/login`, this.form)
         .then(response => {
-          // JSON responses are automatically parsed.
-          this.axiosResponse = "response email" + response.data.user;
           this.form = response.data;
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("email", response.data.email);
           this.$store.commit("setCurrentUser", response.data.user);
-          console.log("USER AFTER SETTING", this.$store.getters.user);
-
-          //sessionStorage.setItem('email', response.data.email);
-          //console.log('store', this.$store.getters.getUser)
           this.$router.push("/home");
+          loginButton.disabled = false;
+          inputElements.forEach(input => (input.disabled = false));
+          overlay.style.display = "none";
         })
         .catch(e => {
-          console.log(e);
+          console.log("error", e);
+          loginButton.disabled = false;
+          inputElements.forEach(input => {
+            input.disabled = false;
+            input.text = "";
+          });
+          overlay.style.display = "none";
+          document
+            .querySelectorAll(".loginFailed")
+            .forEach(el => (el.style.display = "inline"));
         });
-    },
-    mounted() {
-      const login = document.querySelector("#login");
-      login.addEventListener(
-        "touchstart",
-        function(e) {
-          console.log("onSubmit handler called"); // Won't show up
-        },
-        false
-      );
     }
   }
 };
@@ -121,16 +88,29 @@ export default {
 <style scoped>
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+.loginFailed {
+  display: none;
+  position: relative;
+  bottom: 45%;
+  left: 42%;
+}
+
 .login-page {
-  width: 360px;
+  max-width: 600px;
+  min-width: 360px;
   padding: 8% 0 0;
   margin: auto;
 }
 .form {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
   z-index: 1;
   background: #ffffff;
-  max-width: 360px;
+  max-width: 400px;
+  min-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
@@ -178,7 +158,7 @@ export default {
 .form .register-form {
   display: none;
 }
-.container {
+/* .container {
   position: relative;
   z-index: 1;
   max-width: 300px;
@@ -211,7 +191,7 @@ export default {
 }
 .container .info span .fa {
   color: #ef3b3a;
-}
+} */
 body {
   background: #499324; /* fallback for old browsers */
   background: -webkit-linear-gradient(right, #499324, #8dc26f);
@@ -240,5 +220,55 @@ a {
 }
 .container {
   width: 400px;
+}
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  /* position: absolute; */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 28px;
+    left: 28px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -1px;
+    left: -1px;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+  }
 }
 </style>

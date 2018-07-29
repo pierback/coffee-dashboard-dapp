@@ -1,41 +1,42 @@
 <template>
     <div v-if='true'>
-      <h2 id='headerIcon' style="margin-bottom: 2%;">C☕️ffee Dash</h2>
-      <!-- <vue-tabs centered:true type='pills' style='width: 100%'>
-        <v-tab title='😴' id='tab1'></v-tab>
-        <v-tab title='📊' id='tab2'></v-tab>
-      </vue-tabs> -->
-
-      <swiper>
+      <h2 id='headerIcon' style='margin-bottom: 2%;'>C☕️ffee Dash</h2>
+      <swiper style='border-top:solid; border-width: thin'>
         <swiper-slide>
-          <form @submit='drink' id="drinkFrom">
+          <div @submit='drink' id='drinkFrom'>
             <div style='margin: auto;text-align: center; margin-top: 50px;'>
               <ul style='text-align: center; margin-bottom: 50px; padding:0'>
                 <h4>Size</h4>
                 <li style='display: flex; flex-direction: row; text-align:center; margin-bottom: 20px'> 
-                  <form class="buttonList">
-                        <label class="size"><input type="radio" name="toggle" v-model="form.size" value="small"><span>Small</span></label>
-                        <label class="size"><input type="radio" name="toggle" v-model="form.size" value="big"><span>Big</span></label>
+                  <form class='buttonList'>
+                        <label class='size'><input type='radio' name='toggle' v-model='form.size' value='small'><span>Small</span></label>
+                        <label class='size'><input type='radio' name='toggle' v-model='form.size' value='big'><span>Big</span></label>
                   </form>
                 </li>
                 <h4>Strength</h4>
                 <li style='display: flex; flex-direction: row; text-align:center;'> 
-                  <form class="buttonList" >
-                        <label class="strength" ><input type="radio" name="toggle" v-model="form.strength" value="mild"><span>Mild</span></label>
-                        <label class="strength"><input type="radio" name="toggle" v-model="form.strength" value="normal"><span>Normal</span></label>
-                        <label class="strength"><input type="radio" name="toggle" v-model="form.strength" value="strong"><span>Strong</span></label>
+                  <form class='buttonList' >
+                        <label class='strength' ><input type='radio' name='toggle' v-model='form.strength' value='mild'><span>Mild</span></label>
+                        <label class='strength'><input type='radio' name='toggle' v-model='form.strength' value='normal'><span>Normal</span></label>
+                        <label class='strength'><input type='radio' name='toggle' v-model='form.strength' value='strong'><span>Strong</span></label>
                   </form>
                 </li>
               </ul>
-              <b-button id="drinkSubmit" type='submit' style='width: 150px; margin-bottom: 50px;  background-color: #499324;'>Drink</b-button>
+              <b-button id='drinkSubmit' style='width: 150px; margin-bottom: 50px;  background-color: #499324;' v-on:click='drink'>Drink</b-button>
             </div>
-          </form>
+          </div>
         </swiper-slide>
-        <swiper-slide>
-          <!-- <div class="center" style='max-width: 500px; max-height: 500px;'> -->
-            <div class="block">
-              <div class="centered">
-                <canvas id="myChart" width=500 height=500  style='width:500px;height:500px'></canvas>
+        <swiper-slide style='margin-top: 15px'>
+            <div class='block'>
+              <div class='centered'>
+                <canvas id='userChart' width=500 height=500  style='width:500px;height:500px'></canvas>
+              </div>
+            </div>          
+        </swiper-slide>
+        <swiper-slide style='margin-top: 15px'>
+            <div class='block'>
+              <div class='centered'>
+                <canvas id='overallChart' width=500 height=500  style='width:500px;height:500px'></canvas>
               </div>
             </div>          
         </swiper-slide>
@@ -43,7 +44,7 @@
       </swiper>
 
 
-      <form @submit='logout' id="logout">
+      <form @submit='logout' id='logout'>
         <!-- <button type='submit' style='width:450px; margin:auto; margin-top:120px; padding:50px; background-color:#efebeb'>logout</button> -->
         <div>
           <b-button type='submit' style='width: 50%; max-width: 300px;  background-color: #499324;'>Logout</b-button>
@@ -67,11 +68,28 @@ import Swiper from "swiper";
 import Chart from "chart.js";
 
 Vue.use(Vuex);
+const chartData = {
+  datasets: [
+    {
+      backgroundColor: [
+        "#689912",
+        "#809e00",
+        "#a3a300",
+        "#c1a500",
+        "#e0a600",
+        "#ffa600"
+      ]
+    }
+  ]
+};
 
 let consumption;
-let myDoughnutChart;
+let userConsumChart;
+let overallConsumChart;
 let positionMapping;
 let mySwiper;
+let overallData = JSON.parse(JSON.stringify(chartData));
+let userData = JSON.parse(JSON.stringify(chartData));
 
 document.onkeydown = checkKey;
 
@@ -83,16 +101,21 @@ function checkKey(e) {
     } else if (e.keyCode == "32") {
       //space
       e.preventDefault();
-      mySwiper.activeIndex === 0
-        ? mySwiper.slideTo(1, 500)
-        : mySwiper.slideTo(0, 500);
+      const slideIndex = {
+        0: 1,
+        1: 2,
+        2: 0
+      }[mySwiper.activeIndex];
+
+      mySwiper.slideTo(slideIndex, 500);
     } else if (e.keyCode == "37") {
       // left arrow
       e.preventDefault();
-      mySwiper.slideTo(0);
+      mySwiper.slidePrev(500);
     } else if (e.keyCode == "39") {
+      // right arrow
       e.preventDefault();
-      mySwiper.slideTo(1);
+      mySwiper.slideNext(500);
     }
   }
 }
@@ -114,54 +137,95 @@ export default {
       evt.preventDefault();
       console.log("logout clicked", localStorage);
       localStorage.clear();
-      this.$router.push("/");
+      this.$router.push("/login");
     },
     getUsername() {
-      console.log(" fabp_92@localStorage.de", localStorage["email"]);
+      console.log("localStorage", localStorage["email"]);
       return localStorage["email"];
     },
     createChart() {
-      if (this.$store.getters.chartData) {
-        const ctx = document.getElementById("myChart");
-        if (false) {
-          const dataArrId = positionMapping.get(response.data.coffee);
-          console.log(" mySwiper.activeIndex", dataArrId);
-          this.$store.commit("updateChartData", dataArrId);
-          myDoughnutChart.update();
-        } else {
-          myDoughnutChart = new Chart(ctx, {
-            type: "doughnut",
-            data: this.$store.getters.chartData,
-            options: {
-              legend: {
-                position: "bottom"
-              }
-            }
-          });
+      const ctxUser = document.getElementById("userChart");
+      const ctxOverall = document.getElementById("overallChart");
+      userData.labels = [];
+      userData.datasets[0].data = [];
+      overallData.labels = [];
+      overallData.datasets[0].data = [];
+
+      this.user.coffeeConsumption.forEach((obj, index) => {
+        Object.entries(obj).forEach(([key, val]) => {
+          userData.labels.push(key);
+          userData.datasets[0].data.push(val);
+          this.$store.commit("setKeyPositionMapping", [key, index]);
+        });
+      });
+
+      this.overallConsumption.forEach((obj, index) => {
+        Object.entries(obj).forEach(([key, val]) => {
+          overallData.datasets[0].data.push(val);
+          overallData.labels.push(key);
+        });
+      });
+
+      positionMapping = new Map(this.$store.getters.positionMapping);
+
+      userConsumChart = new Chart(ctxUser, {
+        type: "doughnut",
+        data: userData,
+        options: {
+          legend: {
+            position: "bottom"
+          },
+          title: {
+            display: true,
+            text: "User Consumption",
+            fontSize: 20,
+            fontColor: "black",
+            lineHeight: 2.0
+          }
         }
-      }
+      });
+
+      overallConsumChart = new Chart(ctxOverall, {
+        type: "doughnut",
+        data: overallData,
+        options: {
+          legend: {
+            position: "bottom"
+          },
+          title: {
+            display: true,
+            text: "Overall Consumption",
+            fontSize: 20,
+            fontColor: "black",
+            lineHeight: 2.0
+          }
+        }
+      });
     },
     swipLeft(evt) {
       console.log("evt", evt);
-      /* document.querySelector("#t-tab2").click(); */
+      /* document.querySelector('#t-tab2').click(); */
     },
     drink(evt) {
       evt.preventDefault;
-      console.log("drink");
+      console.log("form ", this.form);
       if (this.form.size && this.form.strength) {
         axios
-          .post(`http://192.168.178.31:3003/api/insertcoffee`, {
+          .post(`http://192.168.188.95:3003/api/insertcoffee`, {
             ...this.form,
             email: this.getUsername()
           })
           .then(response => {
             const dataArrId = positionMapping.get(response.data.coffee);
-            this.$store.commit("updateChartData", dataArrId);
-            myDoughnutChart.update();
-            const tmpSwiper = document.querySelector(".swiper-container").swiper;
+            this.updateChartData(dataArrId);
+            userConsumChart.update();
+            const tmpSwiper = document.querySelector(".swiper-container")
+              .swiper;
 
-            //tmpSwiper.slideReset();
-            setTimeout(() => tmpSwiper.slideTo(1, 500), 200);
+            setTimeout(() => {
+              tmpSwiper.slideTo(1, 500);
+              tmpSwiper.update();
+            }, 500);
 
             const inputArray = document.querySelectorAll("input");
             inputArray.forEach(input => (input.checked = false));
@@ -171,19 +235,22 @@ export default {
             this.form.strength = "";
           });
       }
+      return false;
+    },
+    updateChartData(id) {
+      const newCntUser = parseInt(userData.datasets[0].data[id]) + 1;
+      const newCntAll = parseInt(overallData.datasets[0].data[id]) + 1;
+      userData.datasets[0].data[id] = newCntUser;
+      overallData.datasets[0].data[id] = newCntAll;
     }
   },
   mounted() {
-    console.log("mounted new slide");
-    positionMapping = new Map(this.$store.getters.positionMapping);
-    //this.createChart();
-
     mySwiper = new Swiper(".swiper-container", {
       grabCursor: false,
       centeredSlides: true,
-      resistanceRatio: 0.3,
-      spaceBetween: 40,
-      simulateTouch: false,
+      resistanceRatio: 0.2,
+      spaceBetween: 0,
+      simulateTouch: true,
       iOSEdgeSwipeThreshold: 2,
       pagination: {
         el: ".swiper-pagination",
@@ -197,7 +264,7 @@ export default {
       // Enable debugger
       debugger: true,
       // Responsive breakpoints
-      breakpoints: {
+      /* breakpoints: {
         // when window width is <= 320px
         320: {
           slidesPerView: 1,
@@ -206,14 +273,14 @@ export default {
         // when window width is <= 480px
         480: {
           slidesPerView: 1,
-          spaceBetween: 20
+          spaceBetween: 0
         },
         // when window width is <= 640px
         640: {
           slidesPerView: 1,
           spaceBetween: 30
         }
-      },
+      }, */
       on: {
         init: () => {
           console.log("swiper initialized");
@@ -233,7 +300,7 @@ export default {
 
     axios
       .get(
-        `http://192.168.178.31:3003/api/getuserdata/${localStorage["email"]}`
+        `http://192.168.188.95:3003/api/getuserdata/${localStorage["email"]}`
       )
       .then(response => {
         console.log("​beforeCreate -> response ", response);
@@ -248,23 +315,6 @@ export default {
         this.$store.commit("setCurrentUser", tmpUser);
         this.user = this.$store.getters.user;
         this.overallConsumption = this.$store.getters.overallConsumption;
-
-        this.$store.getters.chartData.datasets[0].data = [];
-        this.$store.getters.chartData.labels = [];
-
-        this.user.coffeeConsumption.forEach((obj, index) => {
-          Object.entries(obj).forEach(([key, val]) => {
-            this.$store.commit("pushChartData", val);
-            this.$store.commit("pushLabel", key);
-            this.$store.commit("setKeyPositionMapping", [key, index]);
-          });
-        });
-        console.log(
-          "​mounted -> this.$store.positionMapping ",
-          this.$store.getters.positionMapping
-        );
-        positionMapping = new Map(this.$store.getters.positionMapping);
-        console.log("​CHARTDATA", this.$store.getters.chartData.datasets[0].data);
         this.createChart();
       })
       .catch(e => {
@@ -382,5 +432,6 @@ export default {
   vertical-align: middle;
   max-width: 100%;
   padding: 10px 15px;
+  position: relative;
 }
 </style>

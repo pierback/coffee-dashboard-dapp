@@ -30,7 +30,6 @@ contract UserController {
         us.insertCoffee(_email, coffee);
     }
 
-
     function getOverallCoffeeCnt(CoffeeSize _size, CoffeeStrength _strength) public constant returns(uint) {
         uint8 coffee = getCoffeeCode(uint8(_size),uint8(_strength));
         UserStorage us = UserStorage(userStorage);

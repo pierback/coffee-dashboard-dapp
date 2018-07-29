@@ -10,9 +10,10 @@ const Web3 = require('web3');
 const fs = require('fs');
 const solc = require('solc');
 
-const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+const web3 = new Web3(new Web3.providers.HttpProvider('http://192.168.188.95:8545'));
 const web3Admin = require('web3admin');
 
+const coffeeCodes = [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]];
 let parentAddress;
 
 setInterval(() => web3.personal.unlockAccount(web3.eth.accounts[0], '0000', 100000), 100000 - 1);
@@ -219,22 +220,18 @@ function getCoffeeString(...coffeeCode) {
 }
 
 function getUserConsumption(contract, user) {
-    const coffeeCodes = [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]];
     return coffeeCodes.reduce((consumArr, el) => {
         const val = contract.getUserCoffeeCnt(user, ...el, { gas: 47000 });
         const coffeeObj = { [getCoffeeString(...el)]: val };
-        console.log(`coffeeObj ${el} ${val}`);
         consumArr.push(coffeeObj);
         return consumArr;
     }, []);
 }
 
 function getOverallConsumption(contract) {
-    const coffeeCodes = [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]];
     return coffeeCodes.reduce((consumArr, el) => {
         const val = contract.getOverallCoffeeCnt(...el, { gas: 47000 });
         const coffeeObj = { [getCoffeeString(...el)]: val };
-        console.log(`Overall ${el} ${val}`);
         consumArr.push(coffeeObj);
         return consumArr;
     }, []);
@@ -378,4 +375,4 @@ app.get('/*', (req, res) => {
         root: __dirname,
     });
 });
-app.listen(port, '192.168.178.31');
+app.listen(port, '192.168.188.95');
