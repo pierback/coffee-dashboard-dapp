@@ -8,6 +8,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
+console.log('webpack ', require('os').hostname().toLowerCase())
+
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
@@ -21,7 +23,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     historyApiFallback: true,
     hot: true,
     compress: true,
-    host: process.env.HOST || config.dev.host,
+    host: require('os').hostname().toLowerCase(),
     port: process.env.PORT || config.dev.port,
     open: config.dev.autoOpenBrowser,
     overlay: config.dev.errorOverlay ? {

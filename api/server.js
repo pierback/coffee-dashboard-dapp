@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 const Web3 = require('web3');
 
-const web3 = new Web3(new Web3.providers.HttpProvider('http://192.168.188.95:8545'));
+const web3 = new Web3(new Web3.providers.HttpProvider(`${require('os').hostname().toLowerCase()}:8545`));
 const web3Admin = require('web3admin');
 const { getContract } = require('./contractDeployment.js');
 
@@ -60,7 +60,9 @@ app.get('/*', (req, res) => {
         root: __dirname,
     });
 });
-app.listen(port, '192.168.188.95');
+app.listen(port, require('os').hostname().toLowerCase());
+
+console.log('EXPRESS RUNNING', require('os').hostname().toLowerCase());
 
 router.route('/register/').post((req, res) => register.handler((req, res)));
 router.route('/getuserdata/:email').get((req, res) => userData.handler(req, res));
