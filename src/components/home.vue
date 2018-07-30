@@ -202,7 +202,7 @@ export default {
       console.log("form ", this.form);
       if (this.form.size && this.form.strength) {
         axios
-          .post(`http://192.168.188.95:3003/api/insertcoffee`, {
+          .post(`http://137.250.39.239:3003/api/insertcoffee`, {
             ...this.form,
             email: this.getUsername()
           })
@@ -260,7 +260,7 @@ export default {
 
     axios
       .get(
-        `http://192.168.188.95:3003/api/getuserdata/${localStorage["email"]}`
+        `http://137.250.39.239:3003/api/getuserdata/${localStorage["email"]}`
       )
       .then(response => {
         console.log("​beforeCreate -> response ", response);

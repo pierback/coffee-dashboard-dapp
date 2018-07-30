@@ -57,7 +57,7 @@ export default {
       inputElements.forEach(input => (input.disabled = true));
 
       axios
-        .post(`http://192.168.188.95:3003/api/login`, this.form)
+        .post(`http://137.250.39.239:3003/api/login`, this.form)
         .then(response => {
           this.form = response.data;
           localStorage.setItem("token", response.data.token);

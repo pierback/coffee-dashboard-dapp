@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const Web3 = require('web3');
 
 const port = process.env.PORT || 3003;
-const host = process.env.HOST || '137.250.39.239';
+const host = process.env.HOST || ' 172.21.85.72';
 const web3 = new Web3(new Web3.providers.HttpProvider(`http://${host}:8545`));
 const web3Admin = require('web3admin');
 const { getContract } = require('./contractDeployment.js');
