@@ -7,7 +7,9 @@ const bodyParser = require('body-parser');
 
 const Web3 = require('web3');
 
-const web3 = new Web3(new Web3.providers.HttpProvider(`${require('os').hostname().toLowerCase()}:8545`));
+const port = process.env.PORT || 3003;
+const host = process.env.HOST || '137.250.39.239';
+const web3 = new Web3(new Web3.providers.HttpProvider(`http://${host}:8545`));
 const web3Admin = require('web3admin');
 const { getContract } = require('./contractDeployment.js');
 
@@ -51,7 +53,6 @@ app.use((req, res, next) => {
     next();
 });
 
-const port = process.env.PORT || 3003;
 const router = express.Router();
 
 app.use('/api', router);
@@ -60,9 +61,8 @@ app.get('/*', (req, res) => {
         root: __dirname,
     });
 });
-app.listen(port, require('os').hostname().toLowerCase());
+app.listen(port, host);
 
-console.log('EXPRESS RUNNING', require('os').hostname().toLowerCase());
 
 router.route('/register/').post((req, res) => register.handler((req, res)));
 router.route('/getuserdata/:email').get((req, res) => userData.handler(req, res));

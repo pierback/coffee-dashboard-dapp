@@ -5,9 +5,9 @@
   "author": "Fabian Pieringer",
   "private": true,
   "scripts": {
-    "client": "webpack-dev-server --host 137.250.1.253 --port 3002 --inline --progress --config build/webpack.dev.conf.js",
+    "client": "webpack-dev-server -host 137.250.39.239 --port 3002 --inline --progress --config build/webpack.dev.conf.js",
     "start": "concurrently \"npm run bchain\" \"npm run dev \"",
-    "bchain": "geth --port 3000 --networkid 58342 --nodiscover --datadir=./blockchain/privchain --maxpeers=0  --rpc --rpcport 8545 --rpcaddr 137.250.1.253 --rpccorsdomain \"*\" --rpcapi \"eth,net,web3,personal,miner\"",
+    "bchain": "geth --port 3000 --networkid 58342 --nodiscover --datadir=./blockchain/privchain --maxpeers=0  --rpc --rpcport 8545 --rpcaddr 137.250.39.239 --rpccorsdomain \"*\" --rpcapi \"eth,net,web3,personal,miner\"",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "npm start --prefix ./api",

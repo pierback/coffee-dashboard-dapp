@@ -3,7 +3,7 @@
 A DApp based on node.js and genesis ethereum blockchain on the backend side + vue.js as frontend library.
 
 ## Setup
-The only development dependency of this project is [Node.js](https://nodejs.org), make sure you have it installed.
+The only development dependency of this project is [Node.js](https://nodejs.org) (>= 8 recommended), make sure you have it installed.
 
 Then type in following commands:
 
